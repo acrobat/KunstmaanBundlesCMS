@@ -74,7 +74,7 @@ class NodeRepository extends NestedTreeRepository
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('b.deleted = 0')
+            ->where('b.deleted = false')
             ->setParameter('lang', $lang)
             ->addOrderBy('t.weight', 'ASC')
             ->addOrderBy('t.title', 'ASC');
@@ -309,7 +309,7 @@ SQL;
                 'v',
                 '(v.node_id = n.id AND v.lang <> :lang)'
             )
-            ->where('n.deleted = 0')
+            ->where('n.deleted = false')
             ->addGroupBy('n.id')
             ->addOrderBy('t.weight', 'ASC')
             ->addOrderBy('t.title', 'ASC');
@@ -364,7 +364,7 @@ SQL;
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('node.deleted = 0');
+            ->where('node.deleted = false');
 
         if ($lang) {
             $qb->andWhere('t.lang = :lang')
@@ -408,7 +408,7 @@ SQL;
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('node.deleted = 0')
+            ->where('node.deleted = false')
             ->andWhere('node.parent IS NULL');
 
         if ($lang) {
@@ -440,7 +440,7 @@ SQL;
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('b.deleted = 0')
+            ->where('b.deleted = false')
             ->andWhere('b.parent IS NULL');
 
         return $qb->getQuery()->getResult();
@@ -471,7 +471,7 @@ SQL;
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('n.deleted = 0')
+            ->where('n.deleted = false')
             ->andWhere('n.internalName = :internalName')
             ->setParameter('internalName', $internalName)
             ->andWhere('t.lang = :lang')
@@ -508,7 +508,7 @@ SQL;
     {
         $qb = $this->createQueryBuilder('n')
             ->select('n')
-            ->where('n.deleted = 0')
+            ->where('n.deleted = false')
             ->andWhere('n.internalName = :internalName')
             ->setParameter('internalName', $internalName);
 

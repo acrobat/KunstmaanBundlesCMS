@@ -50,8 +50,8 @@ class NodeTranslationRepository extends EntityRepository
         $qb = $this->createQueryBuilder('nt')
             ->select('nt')
             ->innerJoin('nt.node', 'n', 'WITH', 'nt.node = n.id')
-            ->where('n.deleted != 1')
-            ->andWhere('nt.online = 1')
+            ->where('n.deleted != true')
+            ->andWhere('nt.online = true')
             ->andWhere('nt.lang = :lang')
             ->setParameter('lang', $lang)
             ->andWhere('n.id = :node_id')
@@ -258,7 +258,7 @@ class NodeTranslationRepository extends EntityRepository
                 'WITH',
                 't.publicNodeVersion = v.id'
             )
-            ->where('n.deleted != 1')
+            ->where('n.deleted != true')
             ->setFirstResult(0)
             ->setMaxResults(1);
 
@@ -315,7 +315,7 @@ class NodeTranslationRepository extends EntityRepository
             ->setMaxResults(1);
 
         if (!$includeDeleted) {
-            $qb->andWhere('n.deleted = 0');
+            $qb->andWhere('n.deleted = false');
         }
 
         if (!empty($locale)) {
@@ -391,7 +391,7 @@ class NodeTranslationRepository extends EntityRepository
                 'b.publicNodeVersion = v.id'
             )
             ->where('n.parent IS NULL')
-            ->andWhere('n.deleted != 1');
+            ->andWhere('n.deleted != true');
 
         return $qb->getQuery()->getResult();
     }
@@ -511,7 +511,7 @@ class NodeTranslationRepository extends EntityRepository
                 'select nt.*
                 from kuma_node_translations nt
                 join kuma_nodes n on n.id = nt.node_id
-                where n.deleted = 0 and nt.lang = :lang and locate(nt.url, :url) = 1
+                where n.deleted = false and nt.lang = :lang and locate(nt.url, :url) = 1
                 order by length(nt.url) desc limit 1',
                 $rsm
             );
@@ -577,8 +577,8 @@ class NodeTranslationRepository extends EntityRepository
                 'WITH',
                 'nt.publicNodeVersion = v.id'
             )
-            ->where('n.deleted != 1')
-            ->andWhere('nt.online = 1')
+            ->where('n.deleted != true')
+            ->andWhere('nt.online = true')
             ->setFirstResult(0)
             ->setMaxResults(1);
 
@@ -615,7 +615,7 @@ class NodeTranslationRepository extends EntityRepository
             ->innerJoin('nt.publicNodeVersion', 'nv')
             ->innerJoin('nt.node', 'n')
             ->where('nt.node = :parent')
-            ->andWhere('n.deleted = 0')
+            ->andWhere('n.deleted = false')
             ->andWhere('nt.lang = :lang')
             ->setParameter('parent', $parent)
             ->setParameter('lang', $nodeTranslation->getLang());
