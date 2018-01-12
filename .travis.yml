@@ -1,38 +1,70 @@
-language: php
-
 sudo: false
+dist: trusty
+
+language: php
 
 cache:
   directories:
     - $HOME/.composer/cache/files
+    - $HOME/symfony-bridge/.phpunit
 
-php:
-  - 5.6
-  - 7.0
-  - 7.1
+env:
+    global:
+        - PHPUNIT_FLAGS="-v"
+        - SYMFONY_PHPUNIT_DIR="$HOME/symfony-bridge/.phpunit"
 
 matrix:
-  fast_finish: true
-  allow_failures: ~
+    fast_finish: true
+    include:
+          # Minimum supported Symfony version with the latest PHP version
+        - php: 7.2
+          env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="weak"
+
+          # Test the latest stable release
+        - php: 5.6
+        - php: 7.0
+        - php: 7.1
+        - php: 7.2
+          env: COVERAGE=true PHPUNIT_FLAGS="-v --coverage-clover=coverage.clover"
+
+          # Test LTS versions. This makes sure we do not use Symfony packages with version greater than 3.
+          # Read more at https://github.com/symfony/lts
+        - php: 7.2
+          env: DEPENDENCIES="symfony/lts:^3"
+
+          # Latest commit to master
+        - php: 7.2
+          env: STABILITY="dev"
+
+    allow_failures:
+          # Dev-master is allowed to fail.
+        - env: STABILITY="dev"
 
 before_install:
-  - phpenv config-rm xdebug.ini || true
-  - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
-  - composer selfupdate
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require symfony/symfony:${SYMFONY_VERSION} --no-update; fi
-  - wget https://scrutinizer-ci.com/ocular.phar
+    - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
+    - if ! [ -z "$STABILITY" ]; then composer config minimum-stability ${STABILITY}; fi;
+    - if ! [ -v "$DEPENDENCIES" ]; then composer require --no-update ${DEPENDENCIES}; fi;
+    - composer self-update
+    - wget https://scrutinizer-ci.com/ocular.phar
 
-install: composer update --prefer-dist $COMPOSER_FLAGS
+install:
+    # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
+    - if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
+    - composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction
+    - ./vendor/bin/simple-phpunit install
 
 before_script:
-  - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ] && [ $(php -r "echo PHP_MINOR_VERSION;") -le 4 ] && [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = apc.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
-  - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ] && [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
-  - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ] && [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = memcache.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
+    - if [ $(php -r "echo PHP_MINOR_VERSION;") -le 4 ] && [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = apc.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
+    - if [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
+    - if [ $(php -r "echo PHP_MAJOR_VERSION;") -le 5 ]; then echo "extension = memcache.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
 
-script: ./vendor/bin/phpunit --coverage-clover=coverage.clover
+script:
+    - composer validate --strict --no-check-lock
+    - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
 
 after_script: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
-notifications:
-  email:
-    - travis@kunstmaan.be
+#notifications:
+#  email:
+#    - travis@kunstmaan.be
