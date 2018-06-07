@@ -41,7 +41,7 @@
         "liip/imagine-bundle": "~1.7|^2.0",
         "imagine/imagine": "~0.6",
         "knplabs/knp-gaufrette-bundle": "~0.1",
-        "symfony-cmf/routing-bundle": "2.1.0-RC1@rc",
+        "symfony-cmf/routing-bundle": "~2.0",
         "fpn/doctrine-extensions-taggable": "~0.9",
         "sensio/generator-bundle": "~3.0",
         "twig/twig": "^1.12|^2.0",
