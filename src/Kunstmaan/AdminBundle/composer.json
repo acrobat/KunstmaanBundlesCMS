@@ -14,28 +14,40 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "symfony/symfony": "~2.8",
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "friendsofsymfony/user-bundle": "2.0.*",
-        "knplabs/knp-menu-bundle": "~2.0",
-        "sensio/framework-extra-bundle": "*",
-        "kunstmaan/utilities-bundle": "~3.2",
-        "guzzlehttp/guzzle": "~6.1"
+        "doctrine/orm": "^2.5",
+        "symfony/config": "^3.4",
+        "symfony/console": "^3.4",
+        "symfony/dependency-injection": "^3.4",
+        "symfony/dom-crawler": "^3.4",
+        "symfony/event-dispatcher": "^3.4",
+        "symfony/filesystem": "^3.4",
+        "symfony/form": "^3.4",
+        "symfony/http-foundation": "^3.4",
+        "symfony/http-kernel": "^3.4",
+        "symfony/options-resolver": "^3.4",
+        "symfony/routing": "^3.4",
+        "symfony/security": "^3.4",
+        "symfony/security-acl": "^3.0",
+        "symfony/translation": "^3.4",
+        "symfony/validator": "^3.4",
+        "symfony/yaml": "^3.4",
+        "twig/twig": "^1.35|^2.4.4"
     },
     "suggest": {
         "kunstmaan/user-management-bundle": "~3.2"
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "~2.2.0",
-        "white-october/pagerfanta-bundle": "1.0.*"
+
     },
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": { "Kunstmaan\\AdminBundle\\": "" }
     },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0-dev"
+            "dev-master": "5.0-dev"
         }
     }
 }
