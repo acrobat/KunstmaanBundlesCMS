@@ -7,6 +7,9 @@ General
  * The `symfony/assetic-bundle` package was removed from our dependencies as it was unused since version 5.0. If your code depends on assetic, add the dependency to your project `composer.json`.
  * The `sensio/distribution-bundle` package was removed from our dependencies as it was unused since version 5.0. If your code depends on `sensio/distribution-bundle` for executing composer after update/install scripts, add the dependency to your project `composer.json`.
  * The version constraint for `fos/user-bundle` is updated to `^2.0` to allow new minor releases. If your code isn't compatible with the new changes of the user-bundle, update/add a custom version constraint for the `fos/user-bundle` in your `composer.json`. Eg `"friendsofsymfony/user-bundle": "2.0.*"`
+ * We don't depend on the `symfony/symfony` package anymore, instead the individual `symfony/*` packages are added as dependencies.
+   If your code depends on other symfony packages than the ones we require, add them to your project `composer.json`.
+ * The `symfony/monolog-bundle` package was removed as it was no dependency of the kunstmaan cms. If you use this in your project, add the `"symfony/monolog-bundle": "~2.8|~3.0"` constraint to your project `composer.json`.
 
 AdminBundle
 -----------
