@@ -1,0 +1,36 @@
+{
+    "name": "kunstmaan/cookie-consent-bundle",
+    "type": "symfony-bundle",
+    "description": "The Kunstmaan Cookie Consent Bundle provides a cookie bar, detailed pop-up window and a similar page explaining each type of cookie used on the website.",
+    "keywords": [
+        "kunstmaan",
+        "cms",
+        "gdpr"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kunstmaan Team",
+            "homepage": "http://www.kunstmaan.be/",
+            "email": "support@kunstmaan.be"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/orm": "^2.5",
+        "kunstmaan/admin-bundle": "^5.4",
+        "kunstmaan/adminlist-bundle": "^5.4",
+        "kunstmaan/generator-bundle": "^5.4",
+        "kunstmaan/config-bundle": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kunstmaan\\CookieBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.4-dev"
+        }
+    }
+}

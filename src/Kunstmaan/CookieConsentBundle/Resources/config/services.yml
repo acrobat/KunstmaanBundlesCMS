@@ -1,0 +1,33 @@
+services:
+  Kunstmaan\CookieBundle\EventSubscriber\CookieBarEventSubscriber:
+      tags:
+        - { name: kernel.event_subscriber }
+      arguments:
+        - '@twig'
+        - '@kunstmaan_admin.adminroute.helper'
+        - '@kunstmaan.legal_cookie_helper'
+
+  Kunstmaan\CookieBundle\Helper\LegalCookieHelper:
+      arguments: ['@doctrine.orm.entity_manager', '%kunstmaan_admin.admin_firewall_name%']
+
+  kunstmaan.legal_cookie_helper: '@Kunstmaan\CookieBundle\Helper\LegalCookieHelper'
+
+  Kunstmaan\CookieBundle\Twig\CookieTwigExtension:
+      arguments: ['@doctrine.orm.entity_manager', '@kunstmaan.legal_cookie_helper']
+      tags:
+          -  { name: 'twig.extension' }
+
+  Kunstmaan\CookieBundle\Helper\Menu\CookieMenuAdaptor:
+      tags:
+        -  { name: 'kunstmaan_admin.menu.adaptor' }
+
+  Kunstmaan\CookieBundle\Controller\LegalController:
+      arguments: ['@kunstmaan.legal_cookie_helper']
+      tags: ['controller.service_arguments']
+
+  Kunstmaan\CookieBundle\Command\GenerateLegalCommand:
+      arguments:
+        - '@filesystem'
+        - '@doctrine'
+      tags:
+        - { name: console.command }

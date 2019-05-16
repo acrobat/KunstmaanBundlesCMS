@@ -1,0 +1,7 @@
+<div id="{{ key }}-panel" class="kmcc-tabs__panel{% if key == node.internalName %} active{% endif %}">
+    {% if not isV4 %}
+        {% include bundle~':Pages:LegalPage/_content.html.twig' with {'page': pageToRender} %}
+    {% else %}
+        {% include 'Pages/LegalPage/_content.html.twig' with {'page': pageToRender} %}
+    {% endif %}
+</div>

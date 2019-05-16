@@ -90,6 +90,7 @@
         "kunstmaan/admin-bundle": "self.version",
         "kunstmaan/adminlist-bundle": "self.version",
         "kunstmaan/article-bundle": "self.version",
+        "kunstmaan/cookie-consent-bundle": "self.version",
         "kunstmaan/form-bundle": "self.version",
         "kunstmaan/media-bundle": "self.version",
         "kunstmaan/media-pagepart-bundle": "self.version",

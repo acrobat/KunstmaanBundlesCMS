@@ -1,0 +1,40 @@
+{% set tabs = {
+    'legal_privacy_policy': 'legal_privacy_policy',
+    'legal_cookie_preferences': 'legal_cookie_preferences',
+    'legal_contact': 'legal_contact'
+} %}
+
+{% for key, tab in tabs %}
+    {% if tab == node.internalName %}
+        {% set tabs = tabs|merge({(tab): node}) %}
+    {% else %}
+        {% set tabs = tabs|merge({(tab): get_node_by_internal_name(tab, app.request.locale)}) %}
+    {% endif %}
+{% endfor %}
+
+<div id="kmcc-content" class="kmcc-container">
+    <div class="kmcc-tabs">
+        {# TabBarItems #}
+        {% for key,tab in tabs %}
+            {% if tab is not null %}
+                {% include 'KunstmaanCookieBundle:Components:TabBarItem.html.twig' with {'key':key, 'tab':tab} %}
+            {% endif %}
+        {% endfor %}
+
+        {# TabBarContentPanels #}
+        {% for key,tab in tabs %}
+            {% if tab is not null %}
+                {% set pageToRender = get_page_by_node_translation(tab.nodeTranslation(app.request.locale, true)) %}
+                {% include 'KunstmaanCookieBundle:Components:TabBarContentPanel.html.twig' with {'key':key, 'tab':tab, 'page': pageToRender, 'bundle':'<%= bundle.name %>'} %}
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+    <div class="kmcc-cookie-modal__footer">
+        {% include 'KunstmaanCookieBundle:Components:AcceptSomeCookiesButton.html.twig' %}
+    </div>
+
+    {% include 'KunstmaanCookieBundle:Components:ToTopButton.html.twig' %}
+</div>
+

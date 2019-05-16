@@ -1,0 +1,46 @@
+{
+  "name": "cookie-bundle",
+  "version": "1.1.0",
+  "description": "GDPR Compliant cookie consent",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ./Resources/ui/js",
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.2",
+    "svgxuse": "^1.2.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:Kunstmaan/KunstmaanCookieBundle.git"
+  },
+  "keywords": [
+    "GDPR",
+    "cookie"
+  ],
+  "author": "Kunstmaan",
+  "license": "MIT",
+  "devDependencies": {
+    "@kunstmaan/eslint-config": "^1.1.0",
+    "@kunstmaan/stylelint-config": "^1.1.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "es6-promise": "4.2.4",
+    "jest": "^22.4.3",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "stylelint": "^9.10.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}
