@@ -45,7 +45,7 @@ class PagePartAdminTwigExtension extends \Twig_Extension
     public function renderWidget(\Twig_Environment $env, PagePartAdmin $ppAdmin, $form = null, array $parameters = [], $templateName = null)
     {
         if ($templateName === null) {
-            $templateName = 'KunstmaanPagePartBundle:PagePartAdminTwigExtension:widget.html.twig';
+            $templateName = '@KunstmaanPagePart/PagePartAdminTwigExtension/widget.html.twig';
         }
 
         $template = $env->loadTemplate($templateName);

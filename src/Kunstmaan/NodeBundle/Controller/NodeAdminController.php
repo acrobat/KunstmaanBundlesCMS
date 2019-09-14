@@ -107,7 +107,7 @@ class NodeAdminController extends Controller
 
     /**
      * @Route("/", name="KunstmaanNodeBundle_nodes")
-     * @Template("KunstmaanNodeBundle:Admin:list.html.twig")
+     * @Template("@KunstmaanNode/Admin/list.html.twig")
      *
      * @param Request $request
      *
@@ -1264,7 +1264,7 @@ class NodeAdminController extends Controller
         }
 
         return $this->render(
-            'KunstmaanNodeBundle:NodeAdmin:pagenottranslated.html.twig',
+            '@KunstmaanNode/NodeAdmin/pagenottranslated.html.twig',
             array(
                 'node' => $node,
                 'nodeTranslations' => $node->getNodeTranslations(

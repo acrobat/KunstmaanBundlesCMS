@@ -31,7 +31,7 @@ class TabsTwigExtension extends Twig_Extension
      *
      * @return string
      */
-    public function renderWidget(Twig_Environment $env, TabPane $tabPane, $options = array(), $template = 'KunstmaanAdminBundle:TabsTwigExtension:widget.html.twig')
+    public function renderWidget(Twig_Environment $env, TabPane $tabPane, $options = array(), $template = '@KunstmaanAdmin/TabsTwigExtension/widget.html.twig')
     {
         $template = $env->loadTemplate($template);
 

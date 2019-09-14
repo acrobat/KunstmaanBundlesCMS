@@ -99,7 +99,7 @@ class GoogleAnalyticsTwigExtension extends Twig_Extension
             );
         }
 
-        $template = $environment->loadTemplate('KunstmaanSeoBundle:GoogleAnalyticsTwigExtension:init.html.twig');
+        $template = $environment->loadTemplate('@KunstmaanSeo/GoogleAnalyticsTwigExtension/init.html.twig');
 
         return $template->render($options);
     }
@@ -115,7 +115,7 @@ class GoogleAnalyticsTwigExtension extends Twig_Extension
         $order = $this->orderPreparer->prepare($order);
         $options = $this->orderConverter->convert($order);
         $template = $environment->loadTemplate(
-            'KunstmaanSeoBundle:GoogleAnalyticsTwigExtension:ecommerce_tracking.html.twig'
+            '@KunstmaanSeo/GoogleAnalyticsTwigExtension/ecommerce_tracking.html.twig'
         );
 
         return $template->render($options);
