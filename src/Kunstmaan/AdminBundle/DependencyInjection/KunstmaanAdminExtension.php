@@ -124,6 +124,7 @@ class KunstmaanAdminExtension extends Extension implements PrependExtensionInter
         $twigConfig['paths'][] = ['value' => dirname(__DIR__).'/Resources/views', 'namespace' => 'FOSUser'];
         $container->prependExtensionConfig('twig', $twigConfig);
 
+        // NEXT_MAJOR: Remove templating config (toghether with templating dependency)
         $frameworkConfig['templating']['engines'] = ['twig'];
         $container->prependExtensionConfig('framework', $frameworkConfig);
 
