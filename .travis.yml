@@ -89,6 +89,11 @@ jobs:
         - npm run build -- --continueAfterTestError=true
         - npm run buildGroundControlSkeleton
       after_script: skip
-#    - stage: Code quality
+
+    # Code quality checks
+    - stage: Code quality
+      php: 7.4
+      env: PHPStan=true
+      script: vendor/bin/phpstan analyse
 
 
