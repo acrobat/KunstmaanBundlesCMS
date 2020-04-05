@@ -19,7 +19,7 @@ class SitemapController extends Controller
      *                                       requirements={"_format" = "xml"})
      * @Template("@KunstmaanSitemap/Sitemap/view.xml.twig")
      *
-     * @param $locale
+     * @param string $locale
      *
      * @return array
      */

@@ -453,7 +453,7 @@ class NodePagesConfiguration implements SearchConfigurationInterface
      * @param Node  $node
      * @param array $doc
      *
-     * @return array
+     * @return void
      */
     protected function addPermissions(Node $node, &$doc)
     {
@@ -472,7 +472,7 @@ class NodePagesConfiguration implements SearchConfigurationInterface
      * @param object $page
      * @param array  $doc
      *
-     * @return array
+     * @return void
      */
     protected function addSearchType($page, &$doc)
     {
@@ -485,7 +485,7 @@ class NodePagesConfiguration implements SearchConfigurationInterface
      * @param Node  $node
      * @param array $doc
      *
-     * @return array
+     * @return void
      */
     protected function addParentAndAncestors($node, &$doc)
     {
@@ -672,7 +672,7 @@ class NodePagesConfiguration implements SearchConfigurationInterface
     /**
      * Removes all HTML markup & decode HTML entities
      *
-     * @param $text
+     * @param string $text
      *
      * @return string
      */
@@ -738,7 +738,7 @@ class NodePagesConfiguration implements SearchConfigurationInterface
     }
 
     /**
-     * @param $publicNodeVersion
+     * @param NodeVersion $publicNodeVersion
      *
      * @return mixed
      */

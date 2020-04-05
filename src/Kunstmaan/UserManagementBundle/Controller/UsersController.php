@@ -150,7 +150,7 @@ class UsersController extends BaseSettingsController
         /* @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
-        /** @var UserInterface $user */
+        /** @var BaseUser $user */
         $user = $em->getRepository($this->container->getParameter('fos_user.model.user.class'))->find($id);
         if ($user === null) {
             throw new NotFoundHttpException(sprintf('User with ID %s not found', $id));

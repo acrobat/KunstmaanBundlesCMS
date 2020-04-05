@@ -27,9 +27,7 @@ class UserType extends AbstractType implements RoleDependentUserFormInterface
     /**
      * Setter to check if we can display all form fields
      *
-     * @param $canEditAllFields
-     *
-     * @return bool
+     * @param bool $canEditAllFields
      */
     public function setCanEditAllFields($canEditAllFields)
     {

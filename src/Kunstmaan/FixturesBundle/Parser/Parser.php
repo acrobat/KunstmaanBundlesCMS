@@ -10,12 +10,12 @@ use Kunstmaan\FixturesBundle\Parser\Spec\SpecParserInterface;
 class Parser
 {
     /**
-     * @var PropertyParserInterface[]
+     * @var PropertyParserInterface[]|ArrayCollection
      */
     private $parsers;
 
     /**
-     * @var SpecParserInterface[]
+     * @var SpecParserInterface[]|ArrayCollection
      */
     private $specParsers;
 

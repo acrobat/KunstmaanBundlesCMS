@@ -68,7 +68,7 @@ class Tagging extends BaseTagging
     /**
      * Set tag
      *
-     * @param $tag
+     * @param BaseTag $tag
      */
     public function setTag(BaseTag $tag)
     {
@@ -88,7 +88,7 @@ class Tagging extends BaseTagging
     /**
      * Set resourceType
      *
-     * @param $resourceType
+     * @param string $resourceType
      */
     public function setResourceType($resourceType)
     {
@@ -108,7 +108,7 @@ class Tagging extends BaseTagging
     /**
      * Set resourceId
      *
-     * @param $resourceId
+     * @param string $resourceId
      */
     public function setResourceId($resourceId)
     {
@@ -128,7 +128,7 @@ class Tagging extends BaseTagging
     /**
      * set createdAt
      *
-     * @param $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt(\DateTime $createdAt)
     {
@@ -138,7 +138,7 @@ class Tagging extends BaseTagging
     /**
      * Get createdAt
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -148,7 +148,7 @@ class Tagging extends BaseTagging
     /**
      * Set UpdatedAt
      *
-     * @param $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt(\DateTime $updatedAt)
     {
@@ -158,7 +158,7 @@ class Tagging extends BaseTagging
     /**
      * Get updatedAt
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {

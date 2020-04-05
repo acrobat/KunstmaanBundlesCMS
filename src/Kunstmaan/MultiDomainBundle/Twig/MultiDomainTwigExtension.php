@@ -37,7 +37,7 @@ class MultiDomainTwigExtension extends AbstractExtension
     }
 
     /**
-     * @param $key
+     * @param string $key
      */
     public function getExtraData($key)
     {

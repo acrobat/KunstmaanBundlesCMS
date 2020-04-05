@@ -238,7 +238,7 @@ class SeoTwigExtension extends AbstractExtension
     }
 
     /**
-     * @param $src
+     * @param string $src
      *
      * @return array
      */

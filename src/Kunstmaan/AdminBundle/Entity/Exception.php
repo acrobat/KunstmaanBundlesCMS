@@ -156,7 +156,7 @@ class Exception extends AbstractEntity
     }
 
     /**
-     * @param int $triggered
+     * @param int $events
      */
     public function setEvents($events)
     {

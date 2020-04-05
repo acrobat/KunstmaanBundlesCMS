@@ -7,6 +7,7 @@ use Kunstmaan\AdminBundle\Helper\Security\OAuth\OAuthUserCreator;
 use Kunstmaan\AdminBundle\Helper\Security\OAuth\OAuthUserCreatorInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -21,7 +22,7 @@ class OAuthAuthenticator extends AbstractGuardAuthenticator
     /** @var RouterInterface */
     private $router;
 
-    /** @var SessionInterface */
+    /** @var Session */
     private $session;
 
     /** @var TranslatorInterface */
@@ -43,8 +44,8 @@ class OAuthAuthenticator extends AbstractGuardAuthenticator
      * @param SessionInterface          $session
      * @param TranslatorInterface       $translator
      * @param OAuthUserCreatorInterface $oAuthUserCreator
-     * @param $clientId
-     * @param $clientSecret
+     * @param string                    $clientId
+     * @param string                    $clientSecret
      */
     public function __construct(RouterInterface $router, SessionInterface $session, TranslatorInterface $translator, OAuthUserCreatorInterface $oAuthUserCreator, $clientId, $clientSecret)
     {

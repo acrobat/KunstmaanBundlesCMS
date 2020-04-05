@@ -193,7 +193,7 @@ class EntityVersionLockService
     }
 
     /**
-     * @param bool lockEnabled
+     * @param bool $lockEnabled
      */
     public function setLockEnabled($lockEnabled)
     {

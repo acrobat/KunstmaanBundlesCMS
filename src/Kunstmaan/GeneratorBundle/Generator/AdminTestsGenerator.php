@@ -8,6 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
 
@@ -76,7 +77,7 @@ class AdminTestsGenerator extends Generator
         $featureFiles = (new Finder())
             ->files()
             ->in($skeletonDir)
-            ->filter(function (\SplFileInfo $fileinfo) {
+            ->filter(function (SplFileInfo $fileinfo) {
                 return false !== strpos($fileinfo->getRelativePathName(), '.feature');
             })
             ->getIterator();

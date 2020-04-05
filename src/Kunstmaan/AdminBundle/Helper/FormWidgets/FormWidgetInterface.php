@@ -42,7 +42,7 @@ interface FormWidgetInterface
     /**
      * @param string $identifier
      *
-     * @return TabInterface
+     * @return FormWidgetInterface
      */
     public function setIdentifier($identifier);
 

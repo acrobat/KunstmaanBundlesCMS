@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\FixturesBundle\Parser\Property;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Reference implements PropertyParserInterface
 {
     /**
@@ -21,9 +23,9 @@ class Reference implements PropertyParserInterface
     /**
      * Parse provided value into new data
      *
-     * @param $value
-     * @param $providers
-     * @param array $references
+     * @param mixed                 $value
+     * @param array|ArrayCollection $providers
+     * @param array                 $references
      *
      * @return mixed
      */

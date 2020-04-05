@@ -61,7 +61,7 @@ class EntityVersionLock extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     /**
      * Set owner
      *
-     * @param string
+     * @param string $owner
      *
      * @return EntityVersionLock
      */

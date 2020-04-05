@@ -72,10 +72,10 @@ class PageMenuAdaptor implements MenuAdaptorInterface
      * In this method you can add children for a specific parent, but also
      * remove and change the already created children
      *
-     * @param MenuBuilder $menu      The menu builder
-     * @param MenuItem[]  &$children The children array that may be adapted
-     * @param MenuItem    $parent    The parent menu item
-     * @param Request     $request   The request
+     * @param MenuBuilder $menu     The menu builder
+     * @param MenuItem[]  $children The children array that may be adapted
+     * @param MenuItem    $parent   The parent menu item
+     * @param Request     $request  The request
      */
     public function adaptChildren(
         MenuBuilder $menu,
@@ -176,7 +176,7 @@ class PageMenuAdaptor implements MenuAdaptorInterface
      * Get an array with the id's off all nodes in the tree that should be
      * expanded.
      *
-     * @param $request
+     * @param Request $request
      *
      * @return array
      */
@@ -198,12 +198,10 @@ class PageMenuAdaptor implements MenuAdaptorInterface
 
     /**
      * @param MenuBuilder    $menu          The menu builder
-     * @param MenuItem[]     &$children     The children array that may be
-     *                                      adapted
+     * @param MenuItem[]     $children      The children array that may be adapted
      * @param NodeMenuItem[] $nodes         The nodes
      * @param MenuItem       $parent        The parent menu item
-     * @param array          $activeNodeIds List with id's of all nodes that
-     *                                      should be expanded in the tree
+     * @param array          $activeNodeIds List with id's of all nodes that should be expanded in the tree
      */
     private function processNodes(
         MenuBuilder $menu,

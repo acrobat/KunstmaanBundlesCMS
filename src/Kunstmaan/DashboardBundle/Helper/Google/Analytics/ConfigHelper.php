@@ -3,6 +3,7 @@
 namespace Kunstmaan\DashboardBundle\Helper\Google\Analytics;
 
 use Doctrine\ORM\EntityManager;
+use Kunstmaan\DashboardBundle\Repository\AnalyticsConfigRepository;
 
 class ConfigHelper
 {
@@ -319,7 +320,7 @@ class ConfigHelper
     /**
      * Get the active profile
      *
-     * @return the profile
+     * @return array the profile
      */
     public function getActiveProfile()
     {

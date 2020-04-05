@@ -209,9 +209,9 @@ abstract class KunstmaanGenerateCommand extends GenerateDoctrineCommand
     /**
      * Replaces '\' with '/'.
      *
-     * @param $namespace
+     * @param string $namespace
      *
-     * @return mixed
+     * @return string|string[]
      */
     private function fixNamespace($namespace)
     {
@@ -670,17 +670,17 @@ abstract class KunstmaanGenerateCommand extends GenerateDoctrineCommand
      * Get all the entity fields for a specific type.
      *
      * @param BundleInterface $bundle
-     * @param                 $objectName
-     * @param                 $prefix
-     * @param                 $name
-     * @param                 $type
-     * @param null            $extra
+     * @param string          $objectName
+     * @param string          $prefix
+     * @param string          $name
+     * @param string          $type
+     * @param string|null     $extra
      * @param bool            $allNullable
-     * @param null            $minHeight
-     * @param null            $maxHeight
-     * @param null            $minWidth
-     * @param null            $maxWidth
-     * @param null            $mimeTypes
+     * @param string|null     $minHeight
+     * @param string|null     $maxHeight
+     * @param string|null     $minWidth
+     * @param string|null     $maxWidth
+     * @param array|null      $mimeTypes
      *
      * @return array
      */

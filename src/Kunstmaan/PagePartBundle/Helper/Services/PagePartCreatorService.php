@@ -5,6 +5,7 @@ namespace Kunstmaan\PagePartBundle\Helper\Services;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Kunstmaan\AdminBundle\Entity\EntityInterface;
+use Kunstmaan\NodeBundle\Entity\Node;
 use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Kunstmaan\NodeBundle\Repository\NodeRepository;
 use Kunstmaan\NodeBundle\Repository\NodeTranslationRepository;
@@ -69,17 +70,17 @@ class PagePartCreatorService
     /**
      * Add a single pagepart to an existing page for a specific language, in an optional position.
      *
-     * @param mixed(Node|string)  $nodeOrInternalName
+     * @param Node|string       $nodeOrInternalName
      *                                                A Node instance or the internal name.
      *                                                When the internal name is passed we'll get the node instance.
      *                                                Based on the language we'll locate the correct Page instance.
-     * @param pagePartInterface   $pagePart
+     * @param pagePartInterface $pagePart
      *                                                A completely configured pagepart for this language
-     * @param string              $language
+     * @param string            $language
      *                                                The languagecode. nl|fr|en|.. . Just one.
-     * @param string              $context
+     * @param string            $context
      *                                                Where you want the pagepart to be
-     * @param mixed(integer\NULL) $position
+     * @param int|null          $position
      *                                                Leave null if you want to append at the end.
      *                                                Otherwise set a position you would like and it'll inject the pagepart in that position.
      *                                                It won't override pageparts but it will rather inject itself in that position and
@@ -89,7 +90,7 @@ class PagePartCreatorService
     {
         // Find the correct page instance.
         $node = $this->getNode($nodeOrInternalName);
-        /** @var $translation NodeTranslation */
+        /** @var NodeTranslation $translation */
         $translation = $node->getNodeTranslation($language, true);
         /** @var HasPagePartsInterface $page */
         $page = $translation->getRef($this->em);
@@ -109,9 +110,9 @@ class PagePartCreatorService
     /**
      * A helper function to more easily append multiple pageparts in different manners.
      *
-     * @param mixed(Node|string) $nodeOrInternalName
+     * @param Node|string $nodeOrInternalName
      *                                               The node that you'd like to append the pageparts to. It's also possible to provide an internalname.
-     * @param array              $structure
+     * @param array       $structure
      *                                               The structure array is something like this:
      *
      *      array('main' => array(
@@ -165,14 +166,14 @@ class PagePartCreatorService
     }
 
     /**
-     * @param mixed(Node|string) $nodeOrInternalName
-     * @param string             $language
-     * @param string             $templateName
+     * @param Node|string $nodeOrInternalName
+     * @param string      $language
+     * @param string      $templateName
      */
     public function setPageTemplate($nodeOrInternalName, $language, $templateName)
     {
         $node = $this->getNode($nodeOrInternalName);
-        /** @var $translation NodeTranslation */
+        /** @var NodeTranslation $translation */
         $translation = $node->getNodeTranslation($language, true);
         /** @var HasPageTemplateInterface|EntityInterface $page */
         $page = $translation->getRef($this->em);
@@ -221,7 +222,7 @@ class PagePartCreatorService
     }
 
     /**
-     * @param mixed(string|Node) $nodeOrInternalName
+     * @param Node|string $nodeOrInternalName
      *
      * @return object
      */

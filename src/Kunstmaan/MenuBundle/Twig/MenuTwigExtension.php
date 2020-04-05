@@ -87,7 +87,6 @@ class MenuTwigExtension extends AbstractExtension
      */
     public function getMenuItems($name, $lang)
     {
-        /** @var MenuItem $menuRepo */
         $arrayResult = $this->repository->getMenuItemsForLanguage($name, $lang);
 
         // Make sure the parent item is not offline

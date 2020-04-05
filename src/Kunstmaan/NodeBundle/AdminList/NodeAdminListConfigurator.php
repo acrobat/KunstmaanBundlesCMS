@@ -14,6 +14,7 @@ use Kunstmaan\AdminListBundle\AdminList\FilterType\ORM\DateFilterType;
 use Kunstmaan\AdminListBundle\AdminList\FilterType\ORM\StringFilterType;
 use Kunstmaan\AdminListBundle\AdminList\ListAction\SimpleListAction;
 use Kunstmaan\NodeBundle\Entity\Node;
+use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 /**
@@ -162,6 +163,11 @@ class NodeAdminListConfigurator extends AbstractDoctrineORMAdminListConfigurator
         return false;
     }
 
+    /**
+     * @param NodeTranslation $item
+     *
+     * @return bool
+     */
     public function canEdit($item)
     {
         return $this->authorizationChecker->isGranted(PermissionMap::PERMISSION_EDIT, $item->getNode());

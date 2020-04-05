@@ -31,7 +31,7 @@ final class ImportTranslationsFromFileCommand extends Command
      *
      * @param Importer   $importer
      * @param Translator $translator
-     * @param            $locales
+     * @param array      $locales
      */
     public function __construct(Importer $importer, TranslatorInterface $translator, $locales)
     {

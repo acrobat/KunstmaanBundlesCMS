@@ -191,7 +191,6 @@ EOT
     {
         $withRepositoryOption = $this->assistant->getOption('with-repository');
         if ($withRepositoryOption != 'y' && $withRepositoryOption != 'n') {
-            /** @var $question */
             $withRepositoryOption = $this->assistant->askConfirmation("\nDo you want to generate a repository class for the entity ? (y/n)\n", '', '?', false);
         }
 

@@ -27,6 +27,11 @@ class MediaTokenTransformer implements DataTransformerInterface
         $crawler->filter('img,a')->each(
             function (Crawler $node) {
                 $element = $node->getNode(0);
+
+                if (!$element instanceof \DOMElement) {
+                    throw new \InvalidArgumentException(sprintf('The selected node should be instance of DOMElement, got "%s".', \get_class($node)));
+                }
+
                 $attribute = $element->nodeName === 'img' ? 'src' : 'href';
                 if ($element->hasAttribute('data-' . $attribute)) {
                     $attributeValue = $element->getAttribute('data-' . $attribute);
@@ -61,6 +66,11 @@ class MediaTokenTransformer implements DataTransformerInterface
         $crawler->filter('img,a')->each(
             function (Crawler $node) {
                 $element = $node->getNode(0);
+
+                if (!$element instanceof \DOMElement) {
+                    throw new \InvalidArgumentException(sprintf('The selected node should be instance of DOMElement, got "%s".', \get_class($node)));
+                }
+
                 $attribute = $element->nodeName === 'img' ? 'src' : 'href';
                 $attributeValue = $element->getAttribute($attribute);
                 $parsed = parse_url($attributeValue, PHP_URL_QUERY);

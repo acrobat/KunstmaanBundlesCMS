@@ -74,7 +74,7 @@ class TagManager extends BaseTagManager
     }
 
     /**
-     * @param $id
+     * @param int $id
      *
      * @return mixed|null
      *
@@ -111,9 +111,9 @@ class TagManager extends BaseTagManager
 
     /**
      * @param Taggable $item
-     * @param $class
-     * @param $locale
-     * @param int $nbOfItems
+     * @param string   $class
+     * @param string   $locale
+     * @param int      $nbOfItems
      *
      * @return array|null
      */

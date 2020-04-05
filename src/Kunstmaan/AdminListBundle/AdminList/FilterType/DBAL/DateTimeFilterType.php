@@ -12,7 +12,7 @@ class DateTimeFilterType extends AbstractDBALFilterType
 {
     /**
      * @param Request $request  The request
-     * @param array   &$data    The data
+     * @param array   $data     The data
      * @param string  $uniqueId The unique identifier
      */
     public function bindRequest(Request $request, array &$data, $uniqueId)
@@ -28,7 +28,6 @@ class DateTimeFilterType extends AbstractDBALFilterType
     public function apply(array $data, $uniqueId)
     {
         if (isset($data['value'], $data['comparator'])) {
-            /** @var DateTime $datetime */
             $date = empty($data['value']['date']) ? date('d/m/Y') : $data['value']['date'];
             $time = empty($data['value']['time']) ? date('H:i') : $data['value']['time'];
             $dateTime = DateTime::createFromFormat('d/m/Y H:i', $date . ' ' . $time);

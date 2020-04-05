@@ -71,7 +71,7 @@ interface SearcherInterface
     public function getContentType();
 
     /**
-     * @param string $indexName
+     * @param string $name
      *
      * @return SearcherInterface
      */

@@ -46,7 +46,7 @@ class OrderConverter
     /**
      * Formats a number to a format google an easily comprehend.
      *
-     * @param $number number
+     * @param int|float $number
      *
      * @return string
      */

@@ -15,8 +15,8 @@ interface OAuthUserCreatorInterface
      *
      * Returns Null if email is not in configured domains
      *
-     * @param string email
-     * @param string googleId
+     * @param string $email
+     * @param string $googleId
      *
      * @return mixed AbstractUser Implementation
      */

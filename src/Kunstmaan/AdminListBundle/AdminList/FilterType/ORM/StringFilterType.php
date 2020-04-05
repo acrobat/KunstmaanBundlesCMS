@@ -11,7 +11,7 @@ class StringFilterType extends AbstractORMFilterType
 {
     /**
      * @param Request $request
-     * @param array   &$data
+     * @param array   $data
      * @param string  $uniqueId
      */
     public function bindRequest(Request $request, array &$data, $uniqueId)

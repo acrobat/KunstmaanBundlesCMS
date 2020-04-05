@@ -107,7 +107,7 @@ abstract class AbstractRule
     /**
      * Get the rule admin type
      *
-     * @return AbstractRuleAdminType
+     * @return string
      */
     abstract public function getAdminType();
 }

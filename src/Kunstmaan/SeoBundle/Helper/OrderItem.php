@@ -38,7 +38,7 @@ class OrderItem
     protected $name = '';
 
     /**
-     * @param $name
+     * @param string $name
      *
      * @return $this
      */
@@ -90,7 +90,7 @@ class OrderItem
     /**
      * REQUIRED!
      *
-     * @param $unitPrice number|string
+     * @param int|float|string $unitPrice
      *
      * @return $this
      */
@@ -117,7 +117,7 @@ class OrderItem
     /**
      * REQUIRED!
      *
-     * @param $quantity
+     * @param int|float $quantity
      *
      * @return $this
      */
@@ -152,7 +152,7 @@ class OrderItem
     protected $taxes;
 
     /**
-     * @param $taxes
+     * @param int|float $taxes
      *
      * @return $this
      */

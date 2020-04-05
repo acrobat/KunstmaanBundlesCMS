@@ -31,7 +31,7 @@ interface SearchProviderInterface
     /**
      * Return the index object
      *
-     * @param $indexName
+     * @param string $indexName
      *
      * @return mixed
      */

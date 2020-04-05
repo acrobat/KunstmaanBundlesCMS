@@ -338,7 +338,7 @@ class FolderRepository extends NestedTreeRepository
 
     /**
      * @param Folder $folder
-     * @param        $parent
+     * @param Folder $parent
      */
     private function persistInOrderedTree(Folder $folder, $parent)
     {

@@ -18,7 +18,7 @@ class ConfigureActionsMenuListener
     private $em;
 
     /**
-     * @var Router
+     * @var RouterInterface
      */
     private $router;
 

@@ -5,7 +5,7 @@ namespace Kunstmaan\PagePartBundle\PageTemplate;
 interface PageTemplateConfigurationParserInterface
 {
     /**
-     * @param $name
+     * @param string $name
      *
      * @return PageTemplateInterface
      */

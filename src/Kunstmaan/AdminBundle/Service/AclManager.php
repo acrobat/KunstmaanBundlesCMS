@@ -3,7 +3,11 @@
 namespace Kunstmaan\AdminBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Kunstmaan\AdminBundle\Repository\AclChangesetRepository;
 use Kunstmaan\NodeBundle\Entity\Node;
+use Symfony\Component\Security\Acl\Domain\Acl;
+use Symfony\Component\Security\Acl\Domain\Entry;
+use Symfony\Component\Security\Acl\Model\EntryInterface;
 use Symfony\Component\Security\Acl\Model\MutableAclProviderInterface;
 use Symfony\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
 use Symfony\Component\Security\Acl\Domain\RoleSecurityIdentity;
@@ -36,8 +40,8 @@ class AclManager
     }
 
     /**
-     * @param $originalNode
-     * @param $nodeNewPage
+     * @param Node $originalNode
+     * @param Node $nodeNewPage
      */
     public function updateNodeAcl(Node $originalNode, Node $nodeNewPage)
     {
@@ -48,7 +52,7 @@ class AclManager
         $newAcl = $this->aclProvider->createAcl($newIdentity);
 
         $aces = $originalAcl->getObjectAces();
-        /* @var EntryInterface $ace */
+        /** @var EntryInterface $ace */
         foreach ($aces as $ace) {
             $securityIdentity = $ace->getSecurityIdentity();
             if ($securityIdentity instanceof RoleSecurityIdentity) {
@@ -87,10 +91,9 @@ class AclManager
 
     public function applyAclChangesets()
     {
-        /* @var AclChangesetRepository $aclRepo */
+        /** @var AclChangesetRepository $aclRepo */
         $aclRepo = $this->em->getRepository('KunstmaanAdminBundle:AclChangeset');
         do {
-            /* @var AclChangeset $changeset */
             $changeset = $aclRepo->findNewChangeset();
             if (\is_null($changeset)) {
                 break;

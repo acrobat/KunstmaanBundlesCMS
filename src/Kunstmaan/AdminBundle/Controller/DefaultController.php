@@ -69,7 +69,7 @@ class DefaultController extends Controller
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
                 $em->persist($dashboardConfiguration);
-                $em->flush($dashboardConfiguration);
+                $em->flush();
 
                 $this->addFlash(
                     FlashTypes::SUCCESS,

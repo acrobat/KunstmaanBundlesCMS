@@ -1,0 +1,831 @@
+ ------ --------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/DependencyInjection/Configuration.php                                              
+ ------ --------------------------------------------------------------------------------------------------------- 
+  31     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::fixXmlConfig().  
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Entity/Role.php                                                                                                
+ ------ ------------------------------------------------------------------------------------------------------------------------------------- 
+  79     Return typehint of method Kunstmaan\AdminBundle\Entity\Role::setRole() has invalid type Kunstmaan\AdminBundle\Entity\RoleInterface.  
+ ------ ------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/EventListener/LoginListener.php                                                                      
+ ------ --------------------------------------------------------------------------------------------------------------------------- 
+  49     Binary operation "." between Symfony\Component\Security\Core\User\UserInterface and ' successfully…' results in an error.  
+ ------ --------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/EventListener/PasswordCheckListener.php       
+ ------ -------------------------------------------------------------------- 
+  87     Call to method isPasswordChanged() on an unknown class Stringable.  
+ ------ -------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/EventListener/PasswordResettingListener.php                      
+ ------ --------------------------------------------------------------------------------------- 
+  32     Call to an undefined method FOS\UserBundle\Model\UserInterface::setPasswordChanged().  
+ ------ --------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Form/MediaTokenTransformer.php     
+ ------ --------------------------------------------------------- 
+  31     Call to an undefined method DOMNode::hasAttribute().     
+  32     Call to an undefined method DOMNode::getAttribute().     
+  33     Call to an undefined method DOMNode::setAttribute().     
+  34     Call to an undefined method DOMNode::removeAttribute().  
+  65     Call to an undefined method DOMNode::getAttribute().     
+  70     Call to an undefined method DOMNode::setAttribute().     
+  72     Call to an undefined method DOMNode::setAttribute().     
+ ------ --------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Helper/AdminPanel/DefaultAdminPanelAdaptor.php  
+ ------ ---------------------------------------------------------------------- 
+  51     Call to method getId() on an unknown class Stringable.                
+  53     Call to method getUsername() on an unknown class Stringable.          
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Helper/CloneHelper.php                                                                          
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  43     Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  48     Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Helper/Security/Acl/AclHelper.php                                                        
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  154    Call to an undefined method Symfony\Component\Security\Core\Role\RoleHierarchyInterface::getReachableRoles().  
+  182    Call to method getUserName() on an unknown class Stringable.                                                   
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Helper/Security/Acl/AclNativeHelper.php                                                  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  87     Call to an undefined method Symfony\Component\Security\Core\Role\RoleHierarchyInterface::getReachableRoles().  
+  115    Call to method getUserName() on an unknown class Stringable.                                                   
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminBundle/Helper/Security/Acl/Permission/PermissionAdmin.php                                                                   
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------- 
+  159    Parameter $role of method Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\PermissionAdmin::getPermission() has invalid typehint type  
+         Symfony\Component\Security\Core\Role\RoleInterface.                                                                                        
+  162    Call to method getRole() on an unknown class Symfony\Component\Security\Core\Role\RoleInterface.                                           
+  191    Call to method isSuperAdmin() on an unknown class Stringable.                                                                              
+  321    Call to an undefined method Symfony\Component\Security\Acl\Model\AclInterface::updateObjectAce().                                          
+  324    Call to an undefined method Symfony\Component\Security\Acl\Model\AclInterface::insertObjectAce().                                          
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminListBundle/AdminList/AdminList.php                                                                            
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+  99     Call to an undefined method Kunstmaan\AdminListBundle\AdminList\Configurator\AdminListConfiguratorInterface::getIterator().  
+ ------ ----------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminListBundle/AdminList/Configurator/AbstractDoctrineDBALAdminListConfigurator.php                      
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  154    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\FilterType\FilterTypeInterface::setQueryBuilder().  
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminListBundle/AdminList/Configurator/AbstractDoctrineORMAdminListConfigurator.php                       
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  160    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\FilterType\FilterTypeInterface::setQueryBuilder().  
+  205    Call to an undefined method Doctrine\Persistence\ObjectRepository<mixed>::createQueryBuilder().                     
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/AdminListBundle/AdminList/ExportList.php                                                                            
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+  30     Call to an undefined method Kunstmaan\AdminListBundle\AdminList\Configurator\ExportListConfiguratorInterface::bindRequest().  
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminListBundle/Controller/AdminListController.php                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+  403    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\Configurator\AbstractAdminListConfigurator::getSortableField().  
+  439    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\Configurator\AbstractAdminListConfigurator::getSortableField().  
+  506    PHPDoc tag @param has invalid value ($item): Unexpected token "$item", expected type at offset 226                               
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/AdminListBundle/DependencyInjection/Configuration.php                                      
+ ------ ----------------------------------------------------------------------------------------------------- 
+  29     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/AdminListBundle/Repository/EntityVersionLockRepository.php                                                                      
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
+  23     Return typehint of method Kunstmaan\AdminListBundle\Repository\EntityVersionLockRepository::getLocksForLockableEntity() has invalid type  
+         Kunstmaan\AdminListBundle\Repository\EntityVersionLock.                                                                                   
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/ArticleBundle/AdminList/AbstractArticlePageAdminListConfigurator.php         
+ ------ --------------------------------------------------------------------------------------- 
+  158    Call to an undefined method Doctrine\ORM\EntityRepository::findActiveOverviewPages().  
+  174    Call to an undefined method Doctrine\ORM\EntityRepository::findActiveOverviewPages().  
+ ------ --------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/ConfigBundle/DependencyInjection/Configuration.php                                         
+ ------ ----------------------------------------------------------------------------------------------------- 
+  29     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/GoogleAnalyticsDataCollectCommand.php                       
+ ------ ---------------------------------------------------------------------------------------------- 
+  193    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsSegment.  
+  216    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.   
+  221    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.    
+  227    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.   
+  244    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.   
+  249    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.    
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/GoogleAnalyticsOverviewsGenerateCommand.php                                                                                        
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  121    Method Kunstmaan\DashboardBundle\Command\GoogleAnalyticsOverviewsGenerateCommand::generateOverviewsOfSegment() should return array but return statement is missing.  
+  146    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.                                                                          
+  151    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.                                                                           
+  152    Method Kunstmaan\DashboardBundle\Command\GoogleAnalyticsOverviewsGenerateCommand::generateOverviewsOfConfig() should return array but return statement is missing.   
+  169    Method Kunstmaan\DashboardBundle\Command\GoogleAnalyticsOverviewsGenerateCommand::generateAllOverviews() should return array but return statement is missing.        
+  176    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.                                                                           
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/GoogleAnalyticsOverviewsListCommand.php                     
+ ------ ---------------------------------------------------------------------------------------------- 
+  129    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsSegment.  
+  150    Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.   
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/GoogleAnalyticsSegmentsListCommand.php                    
+ ------ -------------------------------------------------------------------------------------------- 
+  114    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.  
+ ------ -------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/Helper/Analytics/AbstractAnalyticsCommandHelper.php  
+ ------ --------------------------------------------------------------------------------------- 
+  77     Cannot call method getQuery() on int.                                                  
+ ------ --------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Command/Helper/Analytics/GoalCommandHelper.php  
+ ------ -------------------------------------------------------------------------- 
+  111    Cannot call method getQuery() on int.                                     
+ ------ -------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/DashboardBundle/Controller/GoogleAnalyticsAJAXController.php                          
+ ------ ------------------------------------------------------------------------------------------------ 
+  199    Call to method setAccountId() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.     
+  200    Call to method setPropertyId() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.    
+  201    Call to method setProfileId() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.     
+  211    Call to method setName() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.          
+  212    Call to method setDisableGoals() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.  
+  281    Call to method getSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.      
+  283    Call to method setSegments() on an unknown class KunstmaanDashboardBundle:AnalyticsConfig.      
+  315    Call to method setName() on an unknown class KunstmaanDashboardBundle:AnalyticsSegment.         
+  316    Call to method setQuery() on an unknown class KunstmaanDashboardBundle:AnalyticsSegment.        
+ ------ ------------------------------------------------------------------------------------------------ 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Controller/GoogleAnalyticsController.php                            
+ ------ ---------------------------------------------------------------------------------------------- 
+  64     Call to method getOverviews() on an unknown class KunstmaanDashboardBundle:AnalyticsSegment.  
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/DependencyInjection/Configuration.php                                      
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Helper/Google/Analytics/ConfigHelper.php                                                                                                   
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  46     Default value of the parameter #1 $configId (false) of method Kunstmaan\DashboardBundle\Helper\Google\Analytics\ConfigHelper::init() is incompatible with type int.  
+  334    Method Kunstmaan\DashboardBundle\Helper\Google\Analytics\ConfigHelper::getActiveProfile() should return array but return statement is missing.                       
+ ------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/DashboardBundle/Repository/AnalyticsConfigRepository.php                                                                                                    
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  78     Default value of the parameter #1 $id (false) of method Kunstmaan\DashboardBundle\Repository\AnalyticsConfigRepository::flushConfig() is incompatible with type int.  
+  108    PHPDoc tag @param has invalid value (int id): Unexpected token "id", expected variable at offset 80                                                                   
+  178    PHPDoc tag @param references unknown parameter: $profileId                                                                                                            
+  192    PHPDoc tag @param has invalid value (int id): Unexpected token "id", expected variable at offset 58                                                                   
+  206    PHPDoc tag @param has invalid value (int id): Unexpected token "id", expected variable at offset 87                                                                   
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/DashboardBundle/Repository/AnalyticsSegmentRepository.php                                                                                                     
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  46     Default value of the parameter #2 $configId (false) of method Kunstmaan\DashboardBundle\Repository\AnalyticsSegmentRepository::initSegment() is incompatible with type  
+         int.                                                                                                                                                                    
+  48     Cannot call method toArray() on array<Kunstmaan\DashboardBundle\Entity\AnalyticsGoal>.                                                                                  
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/FixturesBundle/Builder/BuildingSupervisor.php                                         
+ ------ ------------------------------------------------------------------------------------------------ 
+  91     PHPDoc tag @param for parameter $fixtures with type mixed is not subtype of native type array.  
+  100    Cannot call method set() on array<Kunstmaan\FixturesBundle\Builder\BuilderInterface>.           
+ ------ ------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FixturesBundle/Parser/Parser.php                                                                               
+ ------ ------------------------------------------------------------------------------------------------------------------------- 
+  62     Method Kunstmaan\FixturesBundle\Parser\Property\PropertyParserInterface::parse() invoked with 4 parameters, 3 required.  
+  90     Method Kunstmaan\FixturesBundle\Parser\Property\PropertyParserInterface::parse() invoked with 4 parameters, 3 required.  
+  112    Cannot call method set() on array<Kunstmaan\FixturesBundle\Parser\Property\PropertyParserInterface>.                     
+  119    Cannot call method set() on array<Kunstmaan\FixturesBundle\Parser\Spec\SpecParserInterface>.                             
+ ------ ------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FixturesBundle/Parser/Property/Method.php                                                            
+ ------ --------------------------------------------------------------------------------------------------------------- 
+  35     PHPDoc tag @param has invalid value ($providers): Unexpected token "$providers", expected type at offset 88    
+  35     PHPDoc tag @param has invalid value ($value): Unexpected token "$value", expected type at offset 67            
+  100    PHPDoc tag @param has invalid value ($additional): Unexpected token "$additional", expected type at offset 44  
+  100    PHPDoc tag @param has invalid value ($parameters): Unexpected token "$parameters", expected type at offset 18  
+  130    PHPDoc tag @param has invalid value ($parameters): Unexpected token "$parameters", expected type at offset 64  
+  154    PHPDoc tag @param has invalid value ($parameters): Unexpected token "$parameters", expected type at offset 64  
+ ------ --------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FixturesBundle/Parser/Property/PropertyParserInterface.php                                            
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  23     PHPDoc tag @param has invalid value ($providers): Unexpected token "$providers", expected type at offset 88     
+  23     PHPDoc tag @param has invalid value ($references): Unexpected token "$references", expected type at offset 113  
+  23     PHPDoc tag @param has invalid value ($value): Unexpected token "$value", expected type at offset 67             
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FixturesBundle/Parser/Property/Reference.php                                                       
+ ------ ------------------------------------------------------------------------------------------------------------- 
+  30     PHPDoc tag @param has invalid value ($providers): Unexpected token "$providers", expected type at offset 88  
+  30     PHPDoc tag @param has invalid value ($value): Unexpected token "$value", expected type at offset 67          
+ ------ ------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/FixturesBundle/Parser/Spec/Listed.php                                                             
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  32     PHPDoc tag @param has invalid value ($fixture): Unexpected token "$fixture", expected type at offset 87     
+  32     PHPDoc tag @param has invalid value ($fixtures): Unexpected token "$fixtures", expected type at offset 110  
+  32     PHPDoc tag @param has invalid value ($spec): Unexpected token "$spec", expected type at offset 67           
+ ------ ------------------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/FixturesBundle/Parser/Spec/Range.php                                                              
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  32     PHPDoc tag @param has invalid value ($fixture): Unexpected token "$fixture", expected type at offset 87     
+  32     PHPDoc tag @param has invalid value ($fixtures): Unexpected token "$fixtures", expected type at offset 110  
+  32     PHPDoc tag @param has invalid value ($spec): Unexpected token "$spec", expected type at offset 67           
+ ------ ------------------------------------------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FixturesBundle/Parser/Spec/SpecParserInterface.php                                       
+ ------ --------------------------------------------------------------------------------------------------- 
+  23     PHPDoc tag @param has invalid value ($spec): Unexpected token "$spec", expected type at offset 81  
+ ------ --------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/FixturesBundle/Populator/Populator.php                                                
+ ------ ------------------------------------------------------------------------------------------------ 
+  46     Cannot call method set() on array<Kunstmaan\FixturesBundle\Populator\Methods\MethodInterface>.  
+ ------ ------------------------------------------------------------------------------------------------ 
+
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FormBundle/Controller/FormSubmissionsController.php                                                   
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  145    PHPDoc tag @throws with type Kunstmaan\FormBundle\Controller\AccessDeniedException is not subtype of Throwable  
+  150    Call to method getNode() on an unknown class KunstmaanFormBundle:FormSubmission.                                
+  151    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.                               
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/FormBundle/DependencyInjection/Configuration.php                                           
+ ------ ----------------------------------------------------------------------------------------------------- 
+  30     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateAdminListCommand.php                                
+ ------ ---------------------------------------------------------------------------------------------- 
+  90     Call to an undefined method Symfony\Component\Console\Application::getKernel().               
+  216    Call to an undefined method Symfony\Component\Console\Helper\HelperInterface::formatBlock().  
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateAdminTestsCommand.php                  
+ ------ --------------------------------------------------------------------------------- 
+  57     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+  63     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateArticleCommand.php                                            
+ ------ -------------------------------------------------------------------------------------------------------- 
+  245    PHPDoc tag @var has invalid value ($question): Unexpected token "$question", expected type at offset 9  
+  259    PHPDoc tag @var has invalid value ($question): Unexpected token "$question", expected type at offset 9  
+  273    PHPDoc tag @var has invalid value ($question): Unexpected token "$question", expected type at offset 9  
+  287    PHPDoc tag @var has invalid value ($question): Unexpected token "$question", expected type at offset 9  
+ ------ -------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateBundleCommand.php                                                                             
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------- 
+  99     Call to an undefined method Symfony\Component\Console\Application::getKernel().                                                         
+  199    Method Kunstmaan\GeneratorBundle\Command\GenerateBundleCommand::checkAutoloader() should return array but return statement is missing.  
+  225    Method Kunstmaan\GeneratorBundle\Command\GenerateBundleCommand::updateKernel() should return array but return statement is missing.     
+  261    Method Kunstmaan\GeneratorBundle\Command\GenerateBundleCommand::updateRouting() should return array but return statement is missing.    
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateDefaultSiteCommand.php                 
+ ------ --------------------------------------------------------------------------------- 
+  102    Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateEntityCommand.php                                             
+ ------ -------------------------------------------------------------------------------------------------------- 
+  195    PHPDoc tag @var has invalid value ($question): Unexpected token "$question", expected type at offset 9  
+ ------ -------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateLayoutCommand.php                      
+ ------ --------------------------------------------------------------------------------- 
+  65     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/GenerateSearchPageCommand.php                  
+ ------ --------------------------------------------------------------------------------- 
+  70     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+  78     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+  80     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+  103    Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/InstallCommand.php                             
+ ------ --------------------------------------------------------------------------------- 
+  72     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Command/KunstmaanGenerateCommand.php                                                  
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+  77     Call to an undefined method Symfony\Component\Console\Application::getKernel().                                 
+  687    PHPDoc tag @param has invalid value ($name): Unexpected token "$name", expected type at offset 213              
+  687    PHPDoc tag @param has invalid value ($objectName): Unexpected token "$objectName", expected type at offset 133  
+  687    PHPDoc tag @param has invalid value ($prefix): Unexpected token "$prefix", expected type at offset 175          
+  687    PHPDoc tag @param has invalid value ($type): Unexpected token "$type", expected type at offset 249              
+ ------ ---------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Generator/AdminTestsGenerator.php      
+ ------ ----------------------------------------------------------------- 
+  80     Call to an undefined method SplFileInfo::getRelativePathName().  
+ ------ ----------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Generator/KunstmaanGenerator.php                                                          
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  113    Call to an undefined method Doctrine\Persistence\ObjectManager::getConfiguration().                                 
+  196    PHPDoc tag @param has invalid value ($bundle): Unexpected token "$bundle", expected type at offset 71               
+  196    PHPDoc tag @param has invalid value ($entityName): Unexpected token "$entityName", expected type at offset 100      
+  196    PHPDoc tag @param has invalid value ($entityPrefix): Unexpected token "$entityPrefix", expected type at offset 133  
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Generator/PagePartGenerator.php                
+ ------ ------------------------------------------------------------------------- 
+  335    Call to an undefined method object::getDefaultAdminType().               
+  373    Call to method getId() on an unknown class KunstmaanMediaBundle:Media.   
+  480    Call to method getId() on an unknown class KunstmaanMediaBundle:Media.   
+  481    Call to method getUrl() on an unknown class KunstmaanMediaBundle:Media.  
+  482    Call to method getId() on an unknown class KunstmaanMediaBundle:Media.   
+  483    Call to method getUrl() on an unknown class KunstmaanMediaBundle:Media.  
+  485    Call to method getId() on an unknown class KunstmaanMediaBundle:Media.   
+  486    Call to method getUrl() on an unknown class KunstmaanMediaBundle:Media.  
+ ------ ------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Helper/CommandAssistant.php                                         
+ ------ ---------------------------------------------------------------------------------------------- 
+  112    Call to an undefined method Symfony\Component\Console\Helper\HelperInterface::formatBlock().  
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/GeneratorBundle/Helper/InputAssistant.php                                           
+ ------ ---------------------------------------------------------------------------------------------- 
+  110    Call to an undefined method Symfony\Component\Console\Helper\HelperInterface::formatBlock().  
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------- 
+  Line   Kunstmaan/LeadGenerationBundle/AdminList/RulesAdminListConfigurator.php  
+ ------ ------------------------------------------------------------------------- 
+  115    Cannot call method getJsProperties() on array|object.                    
+ ------ ------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/LeadGenerationBundle/DependencyInjection/Configuration.php                                 
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/LeadGenerationBundle/Entity/Rule/AfterXScrollPercentRule.php                                                          
+ ------ -------------------------------------------------------------------------------------------------------------------------------- 
+  39     Return typehint of method Kunstmaan\LeadGenerationBundle\Entity\Rule\AfterXScrollPercentRule::setPercentage() has invalid type  
+         Kunstmaan\LeadGenerationBundle\Entity\Rule\AfterXScrollPercent.                                                                 
+ ------ -------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MediaBundle/Controller/MediaController.php                                                   
+ ------ ------------------------------------------------------------------------------------------------------- 
+  325    Call to an undefined method Symfony\Component\HttpFoundation\Session\SessionInterface::getFlashBag().  
+ ------ ------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MediaBundle/DependencyInjection/Configuration.php                                          
+ ------ ----------------------------------------------------------------------------------------------------- 
+  31     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MediaBundle/Validator/Constraints/HasGuessableExtensionValidator.php                       
+ ------ ----------------------------------------------------------------------------------------------------- 
+  37     PHPDoc tag @param has invalid value ($value): Unexpected token "$value", expected type at offset 18  
+  47     Call to an undefined method Symfony\Component\Mime\MimeTypeGuesserInterface::guess().                
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------ 
+  Line   Kunstmaan/MenuBundle/AdminList/MenuItemAdminListConfigurator.php  
+ ------ ------------------------------------------------------------------ 
+  85     Cannot call method getDisplayTitle() on array|object.             
+  93     Cannot call method getType() on array|object.                     
+ ------ ------------------------------------------------------------------ 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MenuBundle/DependencyInjection/Configuration.php                                           
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MenuBundle/Service/RenderService.php                                                     
+ ------ --------------------------------------------------------------------------------------------------- 
+  31     PHPDoc tag @param has invalid value ($node): Unexpected token "$node", expected type at offset 57  
+ ------ --------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MenuBundle/Twig/MenuTwigExtension.php                                                        
+ ------ ------------------------------------------------------------------------------------------------------- 
+  77     Call to an undefined method Kunstmaan\MenuBundle\Repository\MenuItemRepositoryInterface::buildTree().  
+  91     Variable $menuRepo in PHPDoc tag @var does not match assigned variable $arrayResult.                   
+ ------ ------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/MultiDomainBundle/DependencyInjection/Configuration.php                                    
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/AdminList/NodeAdminListConfigurator.php  
+ ------ -------------------------------------------------------------- 
+  167    Cannot call method getNode() on array|object.                 
+ ------ -------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/NodeBundle/Controller/NodeAdminController.php                                         
+ ------ ------------------------------------------------------------------------------------------------ 
+  131    Call to an undefined method Kunstmaan\AdminBundle\Entity\EntityInterface::getNode().            
+  134    Call to an undefined method Kunstmaan\AdminBundle\Entity\EntityInterface::getUrl().             
+  175    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  227    Call to method getPublicNodeVersion() on an unknown class KunstmaanNodeBundle:NodeTranslation.  
+  247    Call to method getLang() on an unknown class KunstmaanNodeBundle:NodeTranslation.               
+  277    Call to method getRefEntityName() on an unknown class KunstmaanNodeBundle:Node.                 
+  315    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  319    Call to method getId() on an unknown class KunstmaanNodeBundle:Node.                            
+  343    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  347    Call to method getId() on an unknown class KunstmaanNodeBundle:Node.                            
+  372    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  406    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  415    Call to method setDeleted() on an unknown class KunstmaanNodeBundle:Node.                       
+  418    Call to method getChildren() on an unknown class KunstmaanNodeBundle:Node.                      
+  425    Call to method getParent() on an unknown class KunstmaanNodeBundle:Node.                        
+  475    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  489    Call to method getParent() on an unknown class KunstmaanNodeBundle:Node.                        
+  562    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  563    Call to method getRef() on an unknown class KunstmaanNodeBundle:NodeVersion.                    
+  632    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  751    Call to method getId() on an unknown class KunstmaanNodeBundle:Node.                            
+  751    Call to method getId() on an unknown class KunstmaanNodeBundle:Node.                            
+  755    Call to method setParent() on an unknown class KunstmaanNodeBundle:Node.                        
+  761    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  824    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+  896    Call to method getDefaultAdminType() on an unknown class KunstmaanNodeBundle:Node.              
+  969    Call to method getId() on an unknown class KunstmaanNodeBundle:Node.                            
+  1045   Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:Node.               
+ ------ ------------------------------------------------------------------------------------------------ 
+
+ ------ -------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Controller/SlugController.php                                    
+ ------ -------------------------------------------------------------------------------------- 
+  91     Call to an undefined method Kunstmaan\NodeBundle\Entity\HasNodeInterface::service().  
+  134    Call to method getRef() on an unknown class KunstmaanNodeBundle:NodeVersion.          
+ ------ -------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Controller/WidgetsController.php                       
+ ------ ---------------------------------------------------------------------------- 
+  122    Call to method getChildren() on an unknown class KunstmaanNodeBundle:Node.  
+ ------ ---------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/DependencyInjection/Configuration.php                                           
+ ------ ----------------------------------------------------------------------------------------------------- 
+  30     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/EventListener/FixDateListener.php                                                                                                                      
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+  18     PHPDoc tag @param for parameter $event with type Symfony\Component\HttpKernel\Event\FilterResponseEvent|Symfony\Component\HttpKernel\Event\GetResponseEvent is not subtype  
+         of native type Symfony\Component\HttpKernel\Event\FilterResponseEvent.                                                                                                      
+ ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------ 
+  Line   Kunstmaan/NodeBundle/EventListener/RenderContextListener.php                  
+ ------ ------------------------------------------------------------------------------ 
+  75     Call to method getRef() on an unknown class KunstmaanNodeBundle:NodeVersion.  
+ ------ ------------------------------------------------------------------------------ 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/EventListener/SlugListener.php                                                                   
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  82     Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Helper/Menu/ActionsMenuBuilder.php                                                               
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  115    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  153    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  415    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Helper/NodeAdmin/NodeAdminPublisher.php                                                          
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  105    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  119    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  167    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  178    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  263    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Helper/NodeAdmin/NodeVersionLockHelper.php                               
+ ------ ---------------------------------------------------------------------------------------------- 
+  106    Call to method setOwner() on an unknown class KunstmaanNodeBundle:NodeVersionLock.            
+  107    Call to method setNodeTranslation() on an unknown class KunstmaanNodeBundle:NodeVersionLock.  
+  108    Call to method setPublicVersion() on an unknown class KunstmaanNodeBundle:NodeVersionLock.    
+  109    Call to method setCreatedAt() on an unknown class KunstmaanNodeBundle:NodeVersionLock.        
+ ------ ---------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeBundle/Helper/NodeHelper.php                                                                            
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+  100    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  163    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  185    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  237    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  259    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  270    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  312    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  386    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  420    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  460    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+  475    Method Symfony\Contracts\EventDispatcher\EventDispatcherInterface::dispatch() invoked with 2 parameters, 1 required.  
+ ------ ---------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/NodeBundle/Repository/NodeRepository.php                                        
+ ------ ------------------------------------------------------------------------------------------ 
+  152    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:NodeVersion.  
+  224    Call to method getNodeTranslation() on an unknown class KunstmaanNodeBundle:NodeVersion.  
+ ------ ------------------------------------------------------------------------------------------ 
+
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeSearchBundle/Configuration/NodePagesConfiguration.php                                                                            
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------- 
+  466    Method Kunstmaan\NodeSearchBundle\Configuration\NodePagesConfiguration::addPermissions() should return array but return statement is missing.  
+  479    Method Kunstmaan\NodeSearchBundle\Configuration\NodePagesConfiguration::addSearchType() should return array but return statement is missing.   
+ ------ ----------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeSearchBundle/DependencyInjection/Configuration.php                                     
+ ------ ----------------------------------------------------------------------------------------------------- 
+  44     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+  45     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+  48     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+  91     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/NodeSearchBundle/PagerFanta/Adapter/SearcherRequestAdapter.php                                                                                                
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  101    Method Kunstmaan\NodeSearchBundle\PagerFanta\Adapter\SearcherRequestAdapter::processResponse() should return array|Elastica\ResultSet but return statement is missing.  
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/NodeSearchBundle/Search/NodeSearcher.php                                   
+ ------ ------------------------------------------------------------------------------------- 
+  209    Call to method getBoost() on an unknown class KunstmaanNodeSearchBundle:NodeSearch.  
+  211    Call to method getNode() on an unknown class KunstmaanNodeSearchBundle:NodeSearch.   
+ ------ ------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/PagePartBundle/DependencyInjection/Configuration.php                                              
+ ------ ------------------------------------------------------------------------------------------------------------ 
+  30     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().         
+  36     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().         
+  52     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().         
+  64     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeParentInterface::scalarNode().  
+  125    Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().         
+ ------ ------------------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/PagePartBundle/EventListener/NodeListener.php                                               
+ ------ ------------------------------------------------------------------------------------------------------ 
+  76     Call to an undefined method Kunstmaan\AdminBundle\Helper\FormWidgets\Tabs\TabInterface::getWidget().  
+  93     Call to an undefined method Kunstmaan\AdminBundle\Helper\FormWidgets\Tabs\TabInterface::getWidget().  
+ ------ ------------------------------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/PagePartBundle/PagePartAdmin/PagePartAdmin.php                                  
+ ------ ------------------------------------------------------------------------------------------ 
+  264    Method Doctrine\Persistence\ObjectManager::flush() invoked with 1 parameter, 0 required.  
+ ------ ------------------------------------------------------------------------------------------ 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   Kunstmaan/RedirectBundle/AdminList/RedirectAdminListConfigurator.php  
+ ------ ---------------------------------------------------------------------- 
+  73     Cannot call method getDomain() on array|object.                       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/RedirectBundle/Router/RedirectRouter.php                                                                                                                
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  68     Default value of the parameter #3 $referenceType (1) of method Kunstmaan\RedirectBundle\Router\RedirectRouter::generate() is incompatible with type bool|string.  
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/SearchBundle/DependencyInjection/Configuration.php                                         
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------ 
+  Line   Kunstmaan/SeoBundle/Controller/Admin/SettingsController.php                   
+ ------ ------------------------------------------------------------------------------ 
+  40     Call to method getRobotsTxt() on an unknown class KunstmaanSeoBundle:Robots.  
+  41     Call to method setRobotsTxt() on an unknown class KunstmaanSeoBundle:Robots.  
+ ------ ------------------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------------------ 
+  Line   Kunstmaan/SeoBundle/Controller/RobotsController.php                           
+ ------ ------------------------------------------------------------------------------ 
+  27     Call to method getRobotsTxt() on an unknown class KunstmaanSeoBundle:Robots.  
+  28     Call to method getRobotsTxt() on an unknown class KunstmaanSeoBundle:Robots.  
+ ------ ------------------------------------------------------------------------------ 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/SeoBundle/DependencyInjection/Configuration.php                                            
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/SitemapBundle/Twig/SitemapTwigExtension.php                                                     
+ ------ ---------------------------------------------------------------------------------------------------------- 
+  39     Call to an undefined method Kunstmaan\NodeBundle\Entity\HasNodeInterface::isHiddenFromSitemap().          
+  57     Call to an undefined method Kunstmaan\NodeBundle\Entity\HasNodeInterface::isChildrenHiddenFromSitemap().  
+ ------ ---------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/TaggingBundle/Entity/TagManager.php                                                                     
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+  42     Call to method toArray() on an unknown class DoctrineExtensions\Taggable\Doctrine\Common\Collections\Collection.  
+  85     Variable $id in isset() always exists and is not nullable.                                                        
+  145    Call to an undefined method Kunstmaan\TaggingBundle\Entity\Taggable::getId().                                     
+  148    Call to an undefined method Kunstmaan\TaggingBundle\Entity\Taggable::getId().                                     
+ ------ ------------------------------------------------------------------------------------------------------------------ 
+
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/TranslatorBundle/AdminList/TranslationAdminListConfigurator.php                                           
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+  210    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\FilterType\FilterTypeInterface::setQueryBuilder().  
+ ------ -------------------------------------------------------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/TranslatorBundle/Command/MigrationsDiffCommand.php                     
+ ------ --------------------------------------------------------------------------------- 
+  36     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/TranslatorBundle/Controller/TranslatorController.php                                                                
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+  327    Call to an undefined method Kunstmaan\AdminListBundle\AdminList\Configurator\AbstractAdminListConfigurator::canEditInline().  
+ ------ ------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/TranslatorBundle/DependencyInjection/Configuration.php                                     
+ ------ ----------------------------------------------------------------------------------------------------- 
+  31     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------ 
+  Line   Kunstmaan/TranslatorBundle/Repository/TranslationRepository.php         
+ ------ ------------------------------------------------------------------------ 
+  146    Result of method Doctrine\ORM\EntityManager::flush() (void) is used.    
+  156    Result of method Doctrine\ORM\EntityManager::persist() (void) is used.  
+ ------ ------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------- 
+  Line   Kunstmaan/TranslatorBundle/Service/Command/DiffCommand.php                       
+ ------ --------------------------------------------------------------------------------- 
+  25     Call to an undefined method Symfony\Component\Console\Application::getKernel().  
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  Line   Kunstmaan/TranslatorBundle/Service/Command/Exporter/ExportCommandHandler.php                                                                                
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+  40     Method Kunstmaan\TranslatorBundle\Service\Command\Exporter\ExportCommandHandler::executeExportCommand() should return int but return statement is missing.  
+ ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/TranslatorBundle/Service/Translator/Translator.php                                                                     
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+  65     Method Kunstmaan\TranslatorBundle\Service\Translator\ResourceCacher::getCachedResources() invoked with 1 parameter, 0 required.  
+ ------ --------------------------------------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------- 
+  Line   Kunstmaan/UserManagementBundle/Controller/GroupsController.php            
+ ------ -------------------------------------------------------------------------- 
+  120    Call to method getName() on an unknown class KunstmaanAdminBundle:Group.  
+  159    Call to method getName() on an unknown class KunstmaanAdminBundle:Group.  
+ ------ -------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------- 
+  Line   Kunstmaan/UserManagementBundle/Controller/RolesController.php            
+ ------ ------------------------------------------------------------------------- 
+  119    Call to method getRole() on an unknown class KunstmaanAdminBundle:Role.  
+  159    Call to method getRole() on an unknown class KunstmaanAdminBundle:Role.  
+ ------ ------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/UserManagementBundle/Controller/UsersController.php                        
+ ------ ------------------------------------------------------------------------------------- 
+  163    Call to an undefined method FOS\UserBundle\Model\UserInterface::getFormTypeClass().  
+ ------ ------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/UtilitiesBundle/DependencyInjection/Configuration.php                                      
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/VotingBundle/DependencyInjection/Configuration.php                                         
+ ------ ----------------------------------------------------------------------------------------------------- 
+  28     Call to an undefined method Symfony\Component\Config\Definition\Builder\NodeDefinition::children().  
+ ------ ----------------------------------------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------------------------------------- 
+  Line   Kunstmaan/VotingBundle/Helper/AbstractVotingHelper.php                                            
+ ------ -------------------------------------------------------------------------------------------------- 
+  37     Call to an undefined method Doctrine\Persistence\ObjectRepository<mixed>::findByReference().      
+  48     Call to an undefined method Doctrine\Persistence\ObjectRepository<mixed>::countByReference().     
+  59     Call to an undefined method Doctrine\Persistence\ObjectRepository<mixed>::getValueByReference().  
+ ------ -------------------------------------------------------------------------------------------------- 
+
+ [ERROR] Found 269 errors                                                                                               
+

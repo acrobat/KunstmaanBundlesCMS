@@ -23,7 +23,7 @@ class NodeTranslationRepository extends EntityRepository
      * @param int    $nodeId
      * @param string $lang
      *
-     * @return array_shift($result)
+     * @return NodeTranslation|null
      */
     public function getNodeTranslationByNodeIdQueryBuilder($nodeId, $lang)
     {
@@ -542,8 +542,8 @@ class NodeTranslationRepository extends EntityRepository
      * It'll only return the latest version. It'll also hide deleted & offline
      * nodes.
      *
-     * @param $language
-     * @param $internalName
+     * @param string $language
+     * @param string $internalName
      */
     public function getNodeTranslationByLanguageAndInternalName(
         $language,

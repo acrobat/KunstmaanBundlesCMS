@@ -61,8 +61,8 @@ class GoalCommandHelper extends AbstractAnalyticsCommandHelper
 
     /**
      * @param AnalyticsOverview $overview
-     * @param                   $metrics
-     * @param                   $dimensions
+     * @param string            $metrics
+     * @param array             $dimensions
      *
      * @return mixed
      */
@@ -192,7 +192,7 @@ class GoalCommandHelper extends AbstractAnalyticsCommandHelper
      * Fetch a specific goals
      *
      * @param AnalyticsOverview $overview       The overview
-     * @param                   $goalCollection
+     * @param array             $goalCollection
      */
     private function parseGoals(&$overview, $goalCollection)
     {

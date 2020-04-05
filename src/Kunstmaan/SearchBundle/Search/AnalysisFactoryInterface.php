@@ -48,7 +48,7 @@ interface AnalysisFactoryInterface
     public function addNGramTokenizer();
 
     /**
-     * @param string $language
+     * @param string $lang
      */
     public function setupLanguage($lang = 'english');
 }

@@ -131,7 +131,7 @@ class TranslatorController extends AdminListController
      * @Template("@KunstmaanTranslator/Translator/editTranslation.html.twig")
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param $id
+     * @param int                                       $id
      *
      * @throws \InvalidArgumentException
      *
@@ -205,7 +205,6 @@ class TranslatorController extends AdminListController
      */
     public function uploadFileAction(Request $request)
     {
-        /** @var FormBuilderInterface $uploadForm */
         $form = $this->createForm(TranslationsFileUploadType::class);
         $configurator = $this->getAdminListConfigurator();
 
@@ -242,9 +241,9 @@ class TranslatorController extends AdminListController
     }
 
     /**
-     * @param $domain
-     * @param $locale
-     * @param $keyword
+     * @param string $domain
+     * @param string $locale
+     * @param string $keyword
      *
      * @return RedirectResponse
      */
@@ -270,7 +269,7 @@ class TranslatorController extends AdminListController
     }
 
     /**
-     * @param $id
+     * @param int $id
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
@@ -292,7 +291,7 @@ class TranslatorController extends AdminListController
     }
 
     /**
-     * @param $adminListConfigurator
+     * @param AbstractAdminListConfigurator $adminListConfigurator
      */
     public function setAdminListConfigurator($adminListConfigurator)
     {
@@ -300,7 +299,7 @@ class TranslatorController extends AdminListController
     }
 
     /**
-     * @return AbstractAdminListConfigurator
+     * @return TranslationAdminListConfigurator
      */
     public function getAdminListConfigurator()
     {

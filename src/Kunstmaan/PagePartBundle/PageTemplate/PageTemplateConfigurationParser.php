@@ -104,7 +104,7 @@ class PageTemplateConfigurationParser implements PageTemplateConfigurationParser
     }
 
     /**
-     * @param $name
+     * @param string $name
      *
      * @return array
      *

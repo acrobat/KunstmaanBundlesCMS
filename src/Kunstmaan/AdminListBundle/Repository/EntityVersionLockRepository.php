@@ -3,6 +3,7 @@
 namespace Kunstmaan\AdminListBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Kunstmaan\AdminListBundle\Entity\EntityVersionLock;
 use Kunstmaan\AdminListBundle\Entity\LockableEntity;
 use FOS\UserBundle\Model\User;
 

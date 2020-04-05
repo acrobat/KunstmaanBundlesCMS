@@ -26,8 +26,8 @@ class <repository> extends ServiceEntityRepository
 ';
 
     /**
-     * @param string $entityClassName
-     * @param string $repositoryClassName
+     * @param string $entityClass
+     * @param string $repositoryClass
      *
      * @return string
      */
@@ -44,7 +44,8 @@ class <repository> extends ServiceEntityRepository
     }
 
     /**
-     * @param string $fullClassName
+     * @param string $entityClass
+     * @param string $repositoryClass
      * @param string $outputDirectory
      */
     public function writeEntityRepositoryClass($entityClass, $repositoryClass, $outputDirectory)

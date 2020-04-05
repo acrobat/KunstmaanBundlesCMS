@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\AdminBundle\Helper\AdminPanel;
 
+use FOS\UserBundle\Model\UserInterface;
+use Kunstmaan\AdminBundle\Entity\BaseUser;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class DefaultAdminPanelAdaptor implements AdminPanelAdaptorInterface
@@ -44,6 +46,10 @@ class DefaultAdminPanelAdaptor implements AdminPanelAdaptorInterface
     protected function getChangePasswordAction()
     {
         $user = $this->tokenStorage->getToken()->getUser();
+
+        if (!$user instanceof UserInterface) {
+            throw new \InvalidArgumentException(sprintf('Can\'t use user of class "%s".', get_class($user)));
+        }
 
         return new AdminPanelAction(
             array(

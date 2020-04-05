@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\AdminBundle\EventListener;
 
+use Kunstmaan\AdminBundle\Entity\BaseUser;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
@@ -75,7 +76,9 @@ class AdminLocaleListener implements EventSubscriberInterface
 
         $token = $this->tokenStorage->getToken();
         if ($token && $this->isAdminToken($this->providerKey, $token)) {
-            $locale = $token->getUser()->getAdminLocale();
+            /** @var BaseUser $user */
+            $user = $token->getUser();
+            $locale = $user->getAdminLocale();
 
             if (!$locale) {
                 $locale = $this->defaultAdminLocale;
@@ -87,7 +90,7 @@ class AdminLocaleListener implements EventSubscriberInterface
 
     /**
      * @param TokenInterface $token
-     * @param                $providerKey
+     * @param string         $providerKey
      *
      * @return bool
      */

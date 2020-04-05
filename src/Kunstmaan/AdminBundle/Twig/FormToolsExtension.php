@@ -56,7 +56,7 @@ class FormToolsExtension extends AbstractExtension
      * Get the error messages.
      *
      * @param FormView[]|FormView $formViews The form views
-     * @param array               &$errors   The errors
+     * @param array               $errors    The errors
      *
      * @return array
      */

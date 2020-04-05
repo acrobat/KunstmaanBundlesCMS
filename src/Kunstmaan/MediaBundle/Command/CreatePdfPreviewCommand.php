@@ -39,7 +39,7 @@ class CreatePdfPreviewCommand extends ContainerAwareCommand
 
     /**
      * @param EntityManagerInterface|null $em
-     * @param PdfTransformer|null         $mediaManager
+     * @param PdfTransformer|null         $pdfTransformer
      */
     public function __construct(/* EntityManagerInterface */ $em = null, /* PdfTransformer */ $pdfTransformer = null, $webRoot = null, $enablePdfPreview = null)
     {

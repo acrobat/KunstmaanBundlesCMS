@@ -71,10 +71,7 @@ class PopulateIndexCommand extends ContainerAwareCommand
             $this->configurationChain = $this->getContainer()->get('kunstmaan_search.search_configuration_chain');
         }
 
-        /**
-         * @var string
-         * @var SearchConfigurationInterface $searchConfiguration
-         */
+        /** @var string $alias */
         foreach ($this->configurationChain->getConfigurations() as $alias => $searchConfiguration) {
             $searchConfiguration->populateIndex();
             $output->writeln('Index populated : ' . $alias);

@@ -4,6 +4,7 @@ namespace Kunstmaan\AdminBundle\Helper\Security\Acl;
 
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\ORM\EntityManager;
+use FOS\UserBundle\Model\UserInterface;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\MaskBuilder;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\PermissionDefinition;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
@@ -107,7 +108,7 @@ class AclNativeHelper
         $uR = array_unique($uR);
         $inString = implode(' OR s.identifier = ', $uR);
 
-        if (\is_object($user)) {
+        if ($user instanceof UserInterface) {
             $inString .= ' OR s.identifier = "' . str_replace(
                     '\\',
                     '\\\\',

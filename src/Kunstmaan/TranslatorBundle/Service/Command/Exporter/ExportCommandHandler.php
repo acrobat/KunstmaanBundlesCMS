@@ -157,7 +157,7 @@ class ExportCommandHandler extends AbstractCommandHandler
     }
 
     /**
-     * @param $exporter
+     * @param Exporter $exporter
      */
     public function setExporter($exporter)
     {
@@ -165,7 +165,7 @@ class ExportCommandHandler extends AbstractCommandHandler
     }
 
     /**
-     * @param $translationRepository
+     * @param TranslationRepository $translationRepository
      */
     public function setTranslationRepository($translationRepository)
     {

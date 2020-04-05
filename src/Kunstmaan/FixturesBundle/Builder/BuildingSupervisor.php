@@ -16,7 +16,7 @@ class BuildingSupervisor
     private $fixtures;
 
     /**
-     * @var BuilderInterface[]
+     * @var BuilderInterface[]|ArrayCollection
      */
     private $builders;
 
@@ -84,7 +84,7 @@ class BuildingSupervisor
     }
 
     /**
-     * @param mixed $fixtures
+     * @param array $fixtures
      *
      * @return BuildingSupervisor
      */

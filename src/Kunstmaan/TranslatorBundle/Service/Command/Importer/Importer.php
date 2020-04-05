@@ -97,8 +97,8 @@ class Importer
         }
         $sheets = $reader->getSheetIterator();
 
-        /** @var Sheet $sheet */
         $importedTranslations = 0;
+        /** @var Sheet $sheet */
         foreach ($sheets as $sheet) {
             $rows = $sheet->getRowIterator();
             $headers = [];
@@ -134,12 +134,12 @@ class Importer
     }
 
     /**
-     * @param      $keyword
-     * @param      $text
-     * @param      $locale
-     * @param      $filename
-     * @param      $domain
-     * @param bool $force
+     * @param string $keyword
+     * @param string $text
+     * @param string $locale
+     * @param string $filename
+     * @param string $domain
+     * @param bool   $force
      *
      * @return bool
      */

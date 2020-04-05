@@ -4,6 +4,7 @@ namespace Kunstmaan\AdminBundle\EventListener;
 
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Model\UserManager;
+use Kunstmaan\AdminBundle\Entity\BaseUser;
 
 /**
  * Set password_changed property to 1 after changing the password
@@ -29,6 +30,10 @@ class PasswordResettingListener
     public function onPasswordResettingSuccess(FilterUserResponseEvent $event)
     {
         $user = $event->getUser();
+        if (!$user instanceof BaseUser) {
+            return;
+        }
+
         $user->setPasswordChanged(true);
         $this->userManager->updateUser($user);
     }

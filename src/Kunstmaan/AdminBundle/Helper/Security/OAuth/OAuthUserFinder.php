@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class OAuthUserFinder implements OAuthUserFinderInterface
 {
-    /** @var EntityManager */
+    /** @var EntityManagerInterface */
     private $em;
 
     /** @var string */
@@ -16,7 +16,7 @@ class OAuthUserFinder implements OAuthUserFinderInterface
      * OAuthUserCreator constructor.
      *
      * @param EntityManagerInterface $em
-     * @param $userClass
+     * @param string                 $userClass
      */
     public function __construct(EntityManagerInterface $em, $userClass)
     {

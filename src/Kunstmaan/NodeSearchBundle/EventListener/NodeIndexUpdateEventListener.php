@@ -132,7 +132,7 @@ class NodeIndexUpdateEventListener implements NodeIndexUpdateEventListenerInterf
     }
 
     /**
-     * @param $nodeTranslation
+     * @param NodeTranslation $nodeTranslation
      *
      * @return bool
      */

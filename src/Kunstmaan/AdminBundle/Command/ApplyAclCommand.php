@@ -19,7 +19,7 @@ use Kunstmaan\AdminBundle\Service\AclManager;
 class ApplyAclCommand extends ContainerAwareCommand
 {
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     private $em = null;
 

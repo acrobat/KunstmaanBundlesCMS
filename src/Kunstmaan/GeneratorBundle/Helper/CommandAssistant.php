@@ -33,7 +33,7 @@ class CommandAssistant
     private $kernel;
 
     /**
-     * @param $input InputInterface
+     * @param InputInterface $input
      */
     public function setInput(InputInterface $input)
     {
@@ -49,7 +49,7 @@ class CommandAssistant
     }
 
     /**
-     * @param $output OutputInterface
+     * @param OutputInterface $output
      */
     public function setOutput(OutputInterface $output)
     {
@@ -57,7 +57,7 @@ class CommandAssistant
     }
 
     /**
-     * @param $questionHelper QuestionHelper
+     * @param QuestionHelper $questionHelper
      */
     public function setQuestionHelper(QuestionHelper $questionHelper)
     {
@@ -73,7 +73,7 @@ class CommandAssistant
     }
 
     /**
-     * @param $kernel Kernel
+     * @param Kernel $kernel
      */
     public function setKernel(Kernel $kernel)
     {

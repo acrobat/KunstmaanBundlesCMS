@@ -3,6 +3,7 @@
 namespace Kunstmaan\AdminBundle\Helper\Security\Acl\Permission;
 
 use Doctrine\ORM\EntityManager;
+use FOS\UserBundle\Model\UserInterface as FosUserInterface;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\AdminBundle\Entity\AclChangeset;
 use Kunstmaan\AdminBundle\Entity\Role;
@@ -188,7 +189,7 @@ class PermissionAdmin
         $roles = $this->em->getRepository('KunstmaanAdminBundle:Role')->findAll();
 
         if (($token = $this->tokenStorage->getToken()) && ($user = $token->getUser())) {
-            if ($user && !$user->isSuperAdmin() && ($superAdminRole = array_keys($roles, 'ROLE_SUPER_ADMIN'))) {
+            if ($user && $user instanceof FosUserInterface && !$user->isSuperAdmin() && ($superAdminRole = array_keys($roles, 'ROLE_SUPER_ADMIN'))) {
                 $superAdminRole = current($superAdminRole);
                 unset($roles[$superAdminRole]);
             }

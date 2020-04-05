@@ -74,7 +74,7 @@ class PagePartTwigExtension extends AbstractExtension
      */
     public function getPageParts(HasPagePartsInterface $page, $context = 'main')
     {
-        /** @var $entityRepository PagePartRefRepository */
+        /** @var PagePartRefRepository $entityRepository */
         $entityRepository = $this->em->getRepository('KunstmaanPagePartBundle:PagePartRef');
 
         return $entityRepository->getPageParts($page, $context);

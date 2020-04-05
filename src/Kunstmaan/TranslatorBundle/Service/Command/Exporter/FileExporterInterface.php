@@ -7,7 +7,7 @@ interface FileExporterInterface
     /**
      * Export an array with translations into a string with the content of this type of file
      *
-     * @param  array
+     * @param array $translations
      *
      * @return string content for the file
      */

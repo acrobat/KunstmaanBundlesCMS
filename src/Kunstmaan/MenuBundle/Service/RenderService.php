@@ -23,8 +23,8 @@ class RenderService
 
     /**
      * @param Environment $environment
-     * @param $node
-     * @param array $options
+     * @param array       $node
+     * @param array       $options
      *
      * @return string
      */

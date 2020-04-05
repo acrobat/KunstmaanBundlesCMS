@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\FixturesBundle\Parser\Property;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Method implements PropertyParserInterface
 {
     const REGEX = '/<[a-zA-Z0-9]+\([^\)]*\)>/';
@@ -23,10 +25,10 @@ class Method implements PropertyParserInterface
     /**
      * Parse provided value into new data
      *
-     * @param $value
-     * @param $providers
-     * @param array $references
-     * @param array $additional
+     * @param mixed           $value
+     * @param ArrayCollection $providers
+     * @param array           $references
+     * @param array           $additional
      *
      * @return mixed
      *
@@ -92,8 +94,8 @@ class Method implements PropertyParserInterface
     }
 
     /**
-     * @param $parameters
-     * @param $additional
+     * @param array $parameters
+     * @param array $additional
      *
      * @return array
      */
@@ -123,7 +125,7 @@ class Method implements PropertyParserInterface
 
     /**
      * @param \ReflectionParameter $parameter
-     * @param $parameters
+     * @param array                $parameters
      *
      * @return null|object
      */
@@ -147,7 +149,7 @@ class Method implements PropertyParserInterface
 
     /**
      * @param \ReflectionParameter $parameter
-     * @param $parameters
+     * @param array                $parameters
      *
      * @return null|mixed
      */

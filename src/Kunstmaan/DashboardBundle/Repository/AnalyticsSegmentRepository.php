@@ -3,6 +3,8 @@
 namespace Kunstmaan\DashboardBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Kunstmaan\DashboardBundle\Entity\AnalyticsOverview;
+use Kunstmaan\DashboardBundle\Entity\AnalyticsSegment;
 
 /**
  * AnalyticsSegmentRepository
@@ -17,7 +19,7 @@ class AnalyticsSegmentRepository extends EntityRepository
      *
      * @param int $id
      *
-     * @return AnalyticsOverview|bool
+     * @return void
      */
     public function deleteSegment($id)
     {

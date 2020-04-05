@@ -17,14 +17,14 @@ class IndexablePagePartsService
     /** @var EntityManagerInterface */
     private $em;
 
-    /** @var [] */
+    /** @var array */
     private $contexts;
 
     /**
      * IndexablePagePartsService constructor.
      *
      * @param EntityManagerInterface $em
-     * @param []                     $contexts
+     * @param array                  $contexts
      */
     public function __construct(EntityManagerInterface $em, $contexts = [])
     {

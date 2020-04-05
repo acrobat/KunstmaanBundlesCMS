@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\ArticleBundle\Entity;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Kunstmaan\ArticleBundle\PagePartAdmin\AbstractArticleOverviewPagePagePartAdminConfigurator;
 use Kunstmaan\NodeBundle\Controller\SlugActionInterface;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
@@ -32,7 +33,7 @@ abstract class AbstractArticleOverviewPage extends AbstractPage implements HasPa
     /**
      * Return the Article repository
      *
-     * @param $em
+     * @param EntityManagerInterface $em
      *
      * @return mixed
      */

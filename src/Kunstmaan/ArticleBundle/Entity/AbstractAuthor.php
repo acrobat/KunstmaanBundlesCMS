@@ -51,7 +51,7 @@ class AbstractAuthor extends AbstractEntity
     }
 
     /**
-     * @param $link
+     * @param string $link
      */
     public function setLink($link)
     {

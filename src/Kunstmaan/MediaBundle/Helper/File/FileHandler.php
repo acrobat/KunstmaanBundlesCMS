@@ -268,7 +268,6 @@ class FileHandler extends AbstractMediaHandler
     public function createNew($data)
     {
         if ($data instanceof File) {
-            /** @var $data File */
             $media = new Media();
             if (method_exists($data, 'getClientOriginalName')) {
                 $media->setOriginalFilename($data->getClientOriginalName());

@@ -103,7 +103,7 @@ class AnalyticsConfigRepository extends EntityRepository
     /**
      * Update the timestamp when data is collected
      *
-     * @param int id
+     * @param int $id
      */
     public function setUpdated($id = false)
     {
@@ -173,7 +173,8 @@ class AnalyticsConfigRepository extends EntityRepository
     /**
      * saves the config name
      *
-     * @param string $profileId
+     * @param string $name
+     * @param int    $id
      */
     public function saveConfigName($name, $id = false)
     {
@@ -187,7 +188,7 @@ class AnalyticsConfigRepository extends EntityRepository
     /**
      * Resets the profile id
      *
-     * @param int id
+     * @param int $id
      */
     public function resetProfileId($id = false)
     {
@@ -201,7 +202,7 @@ class AnalyticsConfigRepository extends EntityRepository
     /**
      * Resets the  account id, property id and profile id
      *
-     * @param int id
+     * @param int $id
      */
     public function resetPropertyId($id = false)
     {

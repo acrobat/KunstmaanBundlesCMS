@@ -45,8 +45,8 @@ class MediaCreatorService
     }
 
     /**
-     * @param $filePath string  The full filepath of the asset you want to upload. The filetype will be automatically detected.
-     * @param $folderId integer For now you still have to manually pass the correct folder ID
+     * @param string  $filePath The full filepath of the asset you want to upload. The filetype will be automatically detected.
+     * @param integer $folderId For now you still have to manually pass the correct folder ID
      *
      * @return Media
      */
@@ -57,9 +57,9 @@ class MediaCreatorService
         // Get file from FilePath.
         $data = new File($filePath, true);
 
-        /** @var $media Media */
+        /** @var Media $media */
         $media = $fileHandler->createNew($data);
-        /** @var $folder Folder */
+        /** @var Folder $folder */
         $folder = $this->folderRepository->getFolder($folderId);
 
         $media->setFolder($folder);

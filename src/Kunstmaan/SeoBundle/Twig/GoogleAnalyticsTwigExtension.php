@@ -127,7 +127,7 @@ class GoogleAnalyticsTwigExtension extends AbstractExtension
     /**
      * Prefer the given option if already set. Otherwise set the value given.
      *
-     * @param array  &$arr   This is modified in place
+     * @param array  $arr    This is modified in place
      * @param string $option the key in the $arr array
      * @param mixed  $value  the new value if the option wasn't set already
      */

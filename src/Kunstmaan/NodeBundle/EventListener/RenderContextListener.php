@@ -23,7 +23,6 @@ class RenderContextListener
     protected $em;
 
     /**
-     * @param EngineInterface        $templating
      * @param EntityManagerInterface $em
      */
     public function __construct(/* EngineInterface|EntityManagerInterface */ $em, EntityManagerInterface $emOld = null)

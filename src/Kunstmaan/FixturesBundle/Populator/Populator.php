@@ -8,7 +8,7 @@ use Kunstmaan\FixturesBundle\Populator\Methods\MethodInterface;
 class Populator
 {
     /**
-     * @var MethodInterface[]
+     * @var MethodInterface[]|ArrayCollection
      */
     private $populators;
 

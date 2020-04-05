@@ -3,6 +3,7 @@
 namespace Kunstmaan\AdminBundle\EventListener;
 
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -49,8 +50,8 @@ final class ConsoleExceptionSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param $command
-     * @param $error
+     * @param Command    $command
+     * @param \Throwable $error
      */
     private function logCommandError($command, $error)
     {

@@ -59,10 +59,7 @@ class SetupIndexCommand extends ContainerAwareCommand
             $this->configurationChain = $this->getContainer()->get('kunstmaan_search.search_configuration_chain');
         }
 
-        /**
-         * @var string
-         * @var SearchConfigurationInterface $searchConfiguration
-         */
+        /** @var string $alias */
         foreach ($this->configurationChain->getConfigurations() as $alias => $searchConfiguration) {
             $languagesNotAnalyzed = $searchConfiguration->getLanguagesNotAnalyzed();
             if (\count($languagesNotAnalyzed) > 0) {

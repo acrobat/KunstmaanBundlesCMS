@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\AdminBundle\EventListener;
 
+use Kunstmaan\AdminBundle\Entity\BaseUser;
 use Kunstmaan\AdminBundle\FlashMessages\FlashTypes;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -84,7 +85,7 @@ class PasswordCheckListener
             $route = $event->getRequest()->get('_route');
             if ($this->authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED') && $route != 'fos_user_change_password') {
                 $user = $this->tokenStorage->getToken()->getUser();
-                if ($user->isPasswordChanged() === false) {
+                if ($user instanceof BaseUser && $user->isPasswordChanged() === false) {
                     $response = new RedirectResponse($this->router->generate('fos_user_change_password'));
                     $this->session->getFlashBag()->add(
                         FlashTypes::DANGER,

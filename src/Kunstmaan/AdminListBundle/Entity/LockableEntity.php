@@ -110,7 +110,7 @@ class LockableEntity extends AbstractEntity
     }
 
     /**
-     * @param $entityClass
+     * @param string $entityClass
      *
      * @return LockableEntity
      */
@@ -134,7 +134,7 @@ class LockableEntity extends AbstractEntity
     /**
      * Set integer
      *
-     * @param $entityId
+     * @param int $entityId
      *
      * @return LockableEntity
      */

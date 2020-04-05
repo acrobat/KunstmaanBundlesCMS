@@ -100,7 +100,7 @@ class PermissionsFormWidget extends FormWidget
     /**
      * @param string $identifier
      *
-     * @return TabInterface
+     * @return PermissionsFormWidget
      */
     public function setIdentifier($identifier)
     {
@@ -120,7 +120,7 @@ class PermissionsFormWidget extends FormWidget
     /**
      * @param HasNodeInterface $page
      *
-     * @return PermissionTab
+     * @return PermissionsFormWidget
      */
     public function setPage($page)
     {
@@ -140,7 +140,7 @@ class PermissionsFormWidget extends FormWidget
     /**
      * @param PermissionAdmin $permissionAdmin
      *
-     * @return PermissionTab
+     * @return PermissionsFormWidget
      */
     public function setPermissionAdmin($permissionAdmin)
     {
@@ -160,7 +160,7 @@ class PermissionsFormWidget extends FormWidget
     /**
      * @param PermissionMapInterface $permissionMap
      *
-     * @return PermissionTab
+     * @return PermissionsFormWidget
      */
     public function setPermissionMap($permissionMap)
     {

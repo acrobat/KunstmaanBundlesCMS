@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\QueryBuilder;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\AclHelper;
 use Kunstmaan\AdminListBundle\AdminList\Configurator\AbstractDoctrineORMAdminListConfigurator;
+use Kunstmaan\MenuBundle\Entity\BaseMenuItem;
 use Kunstmaan\MenuBundle\Entity\Menu;
 use Kunstmaan\MenuBundle\Entity\MenuItem;
 
@@ -74,7 +75,7 @@ class MenuItemAdminListConfigurator extends AbstractDoctrineORMAdminListConfigur
     }
 
     /**
-     * @param array|object $item       The item
+     * @param BaseMenuItem $item       The item
      * @param string       $columnName The column name
      *
      * @return mixed

@@ -5,6 +5,8 @@ namespace Kunstmaan\MediaBundle\Validator\Constraints;
 use Kunstmaan\MediaBundle\Helper\ExtensionGuesserFactoryInterface;
 use Kunstmaan\MediaBundle\Helper\MimeTypeGuesserFactoryInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
+use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface;
+use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -26,8 +28,8 @@ class HasGuessableExtensionValidator extends ConstraintValidator
     private $mimeTypeGuesser;
 
     /**
-     * @param $value
-     * @param Constraint $constraint
+     * @param UploadedFile $value
+     * @param Constraint   $constraint
      *
      * @throws ConstraintDefinitionException
      * @throws UnexpectedTypeException

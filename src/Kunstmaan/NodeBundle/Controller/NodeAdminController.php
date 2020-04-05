@@ -127,7 +127,7 @@ class NodeAdminController extends Controller
 
         $locale = $this->locale;
         $acl = $this->authorizationChecker;
-        $itemRoute = function (EntityInterface $item) use ($locale, $acl) {
+        $itemRoute = function (NodeTranslation $item) use ($locale, $acl) {
             if ($acl->isGranted(PermissionMap::PERMISSION_VIEW, $item->getNode())) {
                 return array(
                     'path' => '_slug_preview',
@@ -1024,7 +1024,7 @@ class NodeAdminController extends Controller
      * )
      *
      * @param Request $request
-     * @param $id
+     * @param int     $id
      *
      * @return JsonResponse
      */

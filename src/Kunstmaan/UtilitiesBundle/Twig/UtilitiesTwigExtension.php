@@ -17,7 +17,7 @@ class UtilitiesTwigExtension extends AbstractExtension
     private $slugifier;
 
     /**
-     * @param $slugifier
+     * @param SlugifierInterface $slugifier
      */
     public function __construct($slugifier)
     {

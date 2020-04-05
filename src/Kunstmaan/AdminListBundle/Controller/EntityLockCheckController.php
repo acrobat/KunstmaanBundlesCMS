@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\AdminListBundle\Controller;
 
+use Kunstmaan\AdminListBundle\Entity\LockableEntityInterface;
 use Kunstmaan\AdminListBundle\Service\EntityVersionLockService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -32,8 +33,8 @@ class EntityLockCheckController extends Controller
      * )
      *
      * @param Request $request
-     * @param $id
-     * @param $repository
+     * @param int     $id
+     * @param string  $repository
      *
      * @return JsonResponse
      */
@@ -46,7 +47,7 @@ class EntityLockCheckController extends Controller
         $entity = $this->getEntityManager()->getRepository($repository)->find($id);
 
         try {
-            /** @var EntityVersionLockService $entityVersionLockservice */
+            /** @var EntityVersionLockService $entityVersionLockService */
             $entityVersionLockService = $this->get('kunstmaan_entity.admin_entity.entity_version_lock_service');
 
             $entityIsLocked = $entityVersionLockService->isEntityLocked($this->getUser(), $entity);

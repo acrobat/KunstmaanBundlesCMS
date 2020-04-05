@@ -102,8 +102,8 @@ EOQ;
     }
 
     /**
-     * @param $locales
-     * @param $domains
+     * @param array $locales
+     * @param array $domains
      *
      * @return mixed
      */
@@ -147,7 +147,7 @@ EOQ;
     }
 
     /**
-     * @param $entity
+     * @param object $entity
      *
      * @return mixed
      */
@@ -211,7 +211,7 @@ EOQ;
 
     /**
      * @param TranslationModel $translationModel
-     * @param                  $translationId
+     * @param int              $translationId
      */
     public function updateTranslations(TranslationModel $translationModel, $translationId)
     {

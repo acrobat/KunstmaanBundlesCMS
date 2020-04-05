@@ -21,7 +21,7 @@ class AdminListFactory
     }
 
     /**
-     * @param $configurator
+     * @param ExportListConfiguratorInterface $configurator
      *
      * @return ExportList
      */

@@ -15,8 +15,8 @@ class FieldAlias
     /**
      * FieldAlias constructor.
      *
-     * @param $abbr string
-     * @param $relation string
+     * @param string $abbr
+     * @param string $relation
      */
     public function __construct($abbr, $relation)
     {

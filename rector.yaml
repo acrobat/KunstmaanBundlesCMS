@@ -1,0 +1,37 @@
+services:
+    Rector\Doctrine\Rector\MethodCall\EntityAliasToClassConstantReferenceRector:
+        $aliasesToNamespaces:
+            'KunstmaanAdminBundle': Kunstmaan\AdminBundle\Entity
+            'KunstmaanAdminListBundle': Kunstmaan\AdminListBundle\Entity
+            'KunstmaanArticleBundle': Kunstmaan\ArticleBundle\Entity
+            'KunstmaanBehatBundle': Kunstmaan\BehatBundle\Entity
+            'KunstmaanCacheBundle': Kunstmaan\CacheBundle\Entity
+            'KunstmaanConfigBundle': Kunstmaan\ConfigBundle\Entity
+            'KunstmaanDashboardBundle': Kunstmaan\DashboardBundle\Entity
+            'KunstmaanFixturesBundle': Kunstmaan\FixturesBundle\Entity
+            'KunstmaanFormBundle': Kunstmaan\FormBundle\Entity
+            'KunstmaanGeneratorBundle': Kunstmaan\GeneratorBundle\Entity
+            'KunstmaanLeadGenerationBundle': Kunstmaan\LeadGenerationBundle\Entity
+            'KunstmaanMediaBundle': Kunstmaan\MediaBundle\Entity
+            'KunstmaanMediaPagePartBundle': Kunstmaan\MediaPagePartBundle\Entity
+            'KunstmaanMenuBundle': Kunstmaan\MenuBundle\Entity
+            'KunstmaanMultiDomainBundle': Kunstmaan\MultiDomainBundle\Entity
+            'KunstmaanNodeBundle': Kunstmaan\NodeBundle\Entity
+            'KunstmaanNodeSearchBundle': Kunstmaan\NodeSearchBundle\Entity
+            'KunstmaanPagePartBundle': Kunstmaan\PagePartBundle\Entity
+            'KunstmaanRedirectBundle': Kunstmaan\RedirectBundle\Entity
+            'KunstmaanSearchBundle': Kunstmaan\SearchBundle\Entity
+            'KunstmaanSeoBundle': Kunstmaan\SeoBundle\Entity
+            'KunstmaanSitemapBundle': Kunstmaan\SitemapBundle\Entity
+            'KunstmaanTaggingBundle': Kunstmaan\TaggingBundle\Entity
+            'KunstmaanTranslatorBundle': Kunstmaan\TranslatorBundle\Entity
+            'KunstmaanUserManagementBundle': Kunstmaan\UserManagementBundle\Entity
+            'KunstmaanUtilitiesBundle': Kunstmaan\UtilitiesBundle\Entity
+            'KunstmaanVotingBundle': Kunstmaan\VotingBundle\Entity
+
+parameters:
+    exclude_paths:
+        - 'src/*/Tests/*'
+        - 'src/*/vendor/*'
+        - 'src/Kunstmaan/GeneratorBundle/Resources/'
+        - 'src/Kunstmaan/BehatBundle'

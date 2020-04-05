@@ -7,6 +7,7 @@ use Kunstmaan\AdminBundle\Helper\DomainConfigurationInterface;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\AclHelper;
 use Kunstmaan\AdminListBundle\AdminList\Configurator\AbstractDoctrineORMAdminListConfigurator;
 use Kunstmaan\AdminListBundle\AdminList\FilterType\ORM;
+use Kunstmaan\RedirectBundle\Entity\Redirect;
 use Kunstmaan\RedirectBundle\Form\RedirectAdminType;
 
 class RedirectAdminListConfigurator extends AbstractDoctrineORMAdminListConfigurator
@@ -70,7 +71,7 @@ class RedirectAdminListConfigurator extends AbstractDoctrineORMAdminListConfigur
      */
     public function getValue($item, $columnName)
     {
-        if ($columnName == 'domain' && !$item->getDomain()) {
+        if ($item instanceof Redirect && $columnName == 'domain' && !$item->getDomain()) {
             return 'All domains';
         }
 

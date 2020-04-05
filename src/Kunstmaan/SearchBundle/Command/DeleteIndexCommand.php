@@ -56,10 +56,8 @@ class DeleteIndexCommand extends ContainerAwareCommand
         if (null === $this->configurationChain) {
             $this->configurationChain = $this->getContainer()->get('kunstmaan_search.search_configuration_chain');
         }
-        /**
-         * @var string
-         * @var SearchConfigurationInterface $searchConfiguration
-         */
+
+        /** @var string $alias */
         foreach ($this->configurationChain->getConfigurations() as $alias => $searchConfiguration) {
             $searchConfiguration->deleteIndex();
             $output->writeln('Index deleted : ' . $alias);

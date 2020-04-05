@@ -5,6 +5,7 @@ namespace Kunstmaan\SitemapBundle\Twig;
 use Kunstmaan\NodeBundle\Helper\NodeMenuItem;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use Kunstmaan\SitemapBundle\Helper\HiddenFromSitemapInterface;
 
 /**
  * @final since 5.4
@@ -33,8 +34,8 @@ class SitemapTwigExtension extends AbstractExtension
      */
     public function isHiddenFromSitemap(NodeMenuItem $item)
     {
-        if (is_subclass_of($item->getNode()->getRefEntityName(), 'Kunstmaan\\SitemapBundle\\Helper\\HiddenFromSitemapInterface')) {
-            $page = $item->getPage();
+        $page = $item->getPage();
+        if (is_subclass_of($page, HiddenFromSitemapInterface::class)) {
 
             return $page->isHiddenFromSitemap();
         }
@@ -51,8 +52,8 @@ class SitemapTwigExtension extends AbstractExtension
      */
     public function isHiddenChildrenFromSitemap(NodeMenuItem $item)
     {
-        if (is_subclass_of($item->getNode()->getRefEntityName(), 'Kunstmaan\\SitemapBundle\\Helper\\HiddenFromSitemapInterface')) {
-            $page = $item->getPage();
+        $page = $item->getPage();
+        if (is_subclass_of($page, HiddenFromSitemapInterface::class)) {
 
             return $page->isChildrenHiddenFromSitemap();
         }

@@ -8,6 +8,7 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Parameter;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\QueryBuilder;
+use FOS\UserBundle\Model\UserInterface;
 use InvalidArgumentException;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\MaskBuilder;
 use Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\PermissionDefinition;
@@ -174,7 +175,7 @@ class AclHelper
         $uR = array_unique($uR);
         $inString = implode(' OR s.identifier = ', $uR);
 
-        if (\is_object($user)) {
+        if ($user instanceof UserInterface) {
             $inString .= ' OR s.identifier = "' . str_replace(
                     '\\',
                     '\\\\',

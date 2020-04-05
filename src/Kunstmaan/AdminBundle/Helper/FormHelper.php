@@ -44,7 +44,7 @@ class FormHelper
      * Get the error messages.
      *
      * @param FormView[]|FormView $formViews The form views
-     * @param array               &$errors   The errors
+     * @param array               $errors    The errors
      *
      * @return array
      */
@@ -61,10 +61,7 @@ class FormHelper
                 $viewErrors = iterator_to_array($viewErrors);
             }
 
-            /**
-             * @var FormView
-             * @var $error   FormError
-             */
+            /** @var FormError $error */
             foreach ($viewErrors as $error) {
                 $template = $error->getMessageTemplate();
                 $parameters = $error->getMessageParameters();

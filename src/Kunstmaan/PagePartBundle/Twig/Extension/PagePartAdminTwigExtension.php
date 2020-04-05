@@ -3,6 +3,7 @@
 namespace Kunstmaan\PagePartBundle\Twig\Extension;
 
 use Kunstmaan\PagePartBundle\PagePartAdmin\PagePartAdmin;
+use Symfony\Component\Form\Form;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -66,7 +67,7 @@ class PagePartAdminTwigExtension extends AbstractExtension
     /**
      * Get usesExtendedPagePartChooser.
      *
-     * @return usesExtendedPagePartChooser
+     * @return bool
      */
     public function getUsesExtendedPagePartChooser()
     {
@@ -76,7 +77,7 @@ class PagePartAdminTwigExtension extends AbstractExtension
     /**
      * Set usesExtendedPagePartChooser.
      *
-     * @param usesExtendedPagePartChooser the value to set
+     * @param bool $usesExtendedPagePartChooser
      */
     public function setUsesExtendedPagePartChooser($usesExtendedPagePartChooser)
     {

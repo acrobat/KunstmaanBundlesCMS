@@ -27,7 +27,7 @@ class AdaptSimpleFormEvent extends Event
     protected $tabPane;
 
     /**
-     * @var
+     * @var mixed
      */
     protected $data;
 
@@ -39,7 +39,7 @@ class AdaptSimpleFormEvent extends Event
     /**
      * @param Request $request
      * @param string  $formType
-     * @param $data
+     * @param mixed $data
      */
     public function __construct(Request $request, $formType, $data, $options = array())
     {
@@ -106,7 +106,7 @@ class AdaptSimpleFormEvent extends Event
     }
 
     /**
-     * @param $data
+     * @param mixed $data
      */
     public function setData($data)
     {
@@ -122,7 +122,7 @@ class AdaptSimpleFormEvent extends Event
     }
 
     /**
-     * @param $options
+     * @param array $options
      */
     public function setOptions($options)
     {

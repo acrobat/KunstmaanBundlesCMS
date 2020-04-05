@@ -4,6 +4,7 @@ namespace Kunstmaan\AdminBundle\Twig;
 
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
+use Twig\TemplateWrapper;
 use Twig\TwigFunction;
 
 /**
@@ -26,10 +27,10 @@ class ToolbarTwigExtension extends AbstractExtension
     }
 
     /**
-     * @param Environment $env
-     * @param $template
-     * @param $block
-     * @param $context
+     * @param Environment            $env
+     * @param string|TemplateWrapper $template
+     * @param string                 $block
+     * @param array                  $context
      *
      * @return string
      */

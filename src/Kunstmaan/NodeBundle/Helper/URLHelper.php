@@ -62,7 +62,7 @@ class URLHelper
     /**
      * Replace a given text, according to the node translation id and the multidomain site id.
      *
-     * @param $text
+     * @param string $text
      *
      * @return mixed
      */

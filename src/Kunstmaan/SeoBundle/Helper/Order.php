@@ -84,7 +84,7 @@ class Order
     protected $shippingTotal = '';
 
     /**
-     * @param $total string|number
+     * @param string|int|float $total
      *
      * @return $this
      */
@@ -186,7 +186,7 @@ class Order
     /**
      * Loops over the OrderItems and accumulates the value of the given property. Can also be a getter.
      *
-     * @param $property
+     * @param string $property
      *
      * @return int|string
      */

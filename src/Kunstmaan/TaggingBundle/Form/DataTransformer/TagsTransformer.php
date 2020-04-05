@@ -39,9 +39,6 @@ class TagsTransformer implements DataTransformerInterface
      * @param mixed $value The value in the original representation
      *
      * @return mixed The value in the transformed representation
-     *
-     * @throws UnexpectedTypeException       when the argument is not a string
-     * @throws TransformationFailedException when the transformation fails
      */
     public function transform($value)
     {
@@ -79,9 +76,6 @@ class TagsTransformer implements DataTransformerInterface
      * @param mixed $value The value in the transformed representation
      *
      * @return mixed The value in the original representation
-     *
-     * @throws UnexpectedTypeException       when the argument is not of the expected type
-     * @throws TransformationFailedException when the transformation fails
      */
     public function reverseTransform($value)
     {

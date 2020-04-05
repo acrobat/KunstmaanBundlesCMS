@@ -90,7 +90,8 @@
         "phpunit/phpunit": "^7.5",
         "friendsofphp/php-cs-fixer": "^2.13",
         "phpstan/phpstan": "^0.12.18",
-        "phpstan/phpstan-doctrine": "^0.12.10"
+        "phpstan/phpstan-doctrine": "^0.12.10",
+        "phpstan/phpstan-symfony": "^0.12.4"
     },
     "replace": {
         "kunstmaan/admin-bundle": "self.version",

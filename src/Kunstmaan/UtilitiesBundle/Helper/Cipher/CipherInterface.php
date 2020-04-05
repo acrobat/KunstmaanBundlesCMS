@@ -20,8 +20,8 @@ interface CipherInterface
     /**
      * Decrypt the given value so that it's readable again.
      *
-     * @param $value
-     * @param $raw_binary
+     * @param string $value
+     * @param bool   $raw_binary
      *
      * @return string
      *

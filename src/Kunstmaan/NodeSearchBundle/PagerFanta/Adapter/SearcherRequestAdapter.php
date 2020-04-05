@@ -88,14 +88,12 @@ class SearcherRequestAdapter implements SearcherRequestAdapterInterface
 
     /**
      * @param ResultSet $result
-     *
-     * @return array|ResultSet
      */
     protected function processResponse(ResultSet $result = null)
     {
         $this->hits = array();
         if (\is_null($result)) {
-            return null;
+            return;
         }
         $this->collectHits($result);
         $this->collectAggregations($result);

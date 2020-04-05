@@ -57,7 +57,7 @@ class PageTemplate implements PageTemplateInterface
     }
 
     /**
-     * @param row[] $rows
+     * @param Row[] $rows
      *
      * @return PageTemplate
      */

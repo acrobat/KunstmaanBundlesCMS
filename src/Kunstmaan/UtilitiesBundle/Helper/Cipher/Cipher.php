@@ -19,7 +19,7 @@ class Cipher implements CipherInterface
     /**
      * Cipher constructor.
      *
-     * @param $secret
+     * @param string|null $secret
      */
     public function __construct($secret)
     {

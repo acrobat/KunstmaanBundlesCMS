@@ -54,7 +54,7 @@ class KunstmaanMultiDomainExtension extends Extension
     /**
      * Convert config hosts array to a usable format
      *
-     * @param $hosts
+     * @param array $hosts
      *
      * @return array
      */
@@ -82,7 +82,7 @@ class KunstmaanMultiDomainExtension extends Extension
     /**
      * Return uri to actual locale mappings
      *
-     * @param $localeSettings
+     * @param array $localeSettings
      *
      * @return array
      */
@@ -99,7 +99,7 @@ class KunstmaanMultiDomainExtension extends Extension
     /**
      * Return the extra data configured for each locale
      *
-     * @param $localeSettings
+     * @param array $localeSettings
      *
      * @return array
      */

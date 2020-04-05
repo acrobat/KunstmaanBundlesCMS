@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\TranslatorBundle\Model\Translation;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Kunstmaan\TranslatorBundle\Entity\Translation;
 
 /**
@@ -17,7 +18,7 @@ class TranslationGroup
     /**
      * All translations for a specific key (Kunstmaan\TranslatorBundle\Model\Translation\Translation)
      *
-     * @var Doctrine\Common\Collections\ArrayCollection
+     * @var ArrayCollection
      **/
     private $translations;
 

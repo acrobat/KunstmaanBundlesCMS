@@ -52,7 +52,7 @@ final class Sf4AppBundle implements BundleInterface
      */
     public function getContainerExtension()
     {
-        //no-op
+        return null;
     }
 
     /**
@@ -108,6 +108,6 @@ final class Sf4AppBundle implements BundleInterface
      */
     public function getParent()
     {
-        //no-op
+        return null;
     }
 }

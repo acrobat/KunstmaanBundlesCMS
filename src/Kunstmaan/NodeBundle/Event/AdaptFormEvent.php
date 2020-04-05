@@ -21,7 +21,7 @@ class AdaptFormEvent extends Event
     private $tabPane;
 
     /**
-     * @var
+     * @var HasNodeInterface
      */
     private $page;
 
@@ -88,7 +88,7 @@ class AdaptFormEvent extends Event
     }
 
     /**
-     * @return
+     * @return HasNodeInterface
      */
     public function getPage()
     {

@@ -213,10 +213,7 @@ EOT
 
             if (false === file_put_contents($file, $content)) {
                 $output->writeln(
-                    $questionHelper->getHelperSet()->get('formatter')->formatBlock(
-                        'Failed adding the content automatically',
-                        'error'
-                    )
+                    $this->getHelper('formatter')->formatBlock('Failed adding the content automatically', 'error')
                 );
             } else {
                 return;

@@ -60,11 +60,6 @@ class SlugRouter implements RouterInterface
     /** @var string */
     protected $slugPattern;
 
-    /**
-     * The constructor for this service
-     *
-     * @param ContainerInterface $container
-     */
     public function __construct(
         /* DomainConfigurationInterface */ $domainConfiguration,
         RequestStack $requestStack = null,

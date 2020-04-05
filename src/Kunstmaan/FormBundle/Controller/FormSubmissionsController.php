@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Kunstmaan\AdminBundle\FlashMessages\FlashTypes;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * The controller which will handle everything related with form pages and form submissions
@@ -121,7 +122,6 @@ class FormSubmissionsController extends Controller
         $nodeTranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->find($nodeTranslationId);
         $translator = $this->get('translator');
 
-        /** @var ExportList $exportList */
         $configurator = new FormSubmissionExportListConfigurator($em, $nodeTranslation, $translator);
         $exportList = $this->get('kunstmaan_adminlist.factory')->createExportList($configurator);
 
