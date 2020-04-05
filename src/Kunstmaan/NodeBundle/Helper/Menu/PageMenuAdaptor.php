@@ -157,7 +157,6 @@ class PageMenuAdaptor implements MenuAdaptorInterface
                 $includeHiddenFromNav,
                 $rootNode
             );
-            /** @var Node $nodeInfo */
             foreach ($allNodes as $nodeInfo) {
                 $refEntityName = $nodeInfo['ref_entity_name'];
                 if ($this->pagesConfiguration->isHiddenFromTree($refEntityName)) {

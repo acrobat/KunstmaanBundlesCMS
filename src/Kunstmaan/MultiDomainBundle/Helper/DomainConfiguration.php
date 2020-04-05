@@ -32,6 +32,8 @@ class DomainConfiguration extends BaseDomainConfiguration
      * @var AdminRouteHelper
      */
     protected $adminRouteHelper;
+    /** @var EntityManagerInterface */
+    private $em;
 
     /**
      * @param ContainerInterface|string $multilanguage
