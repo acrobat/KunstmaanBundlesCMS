@@ -21,7 +21,7 @@ class PagePartBuilder implements BuilderInterface
     public function __construct(EntityManager $em, Populator $populator)
     {
         $this->em = $em;
-        $this->pagePartRepo = $em->getRepository('KunstmaanPagePartBundle:PagePartRef');
+        $this->pagePartRepo = $em->getRepository(\Kunstmaan\PagePartBundle\Entity\PagePartRef::class);
         $this->populator = $populator;
     }
 

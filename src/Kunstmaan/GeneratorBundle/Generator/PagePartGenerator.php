@@ -286,8 +286,8 @@ class PagePartGenerator extends KunstmaanGenerator
             )
         */
 
-        $folder = $this->registry->getRepository('KunstmaanMediaBundle:Folder')->findOneBy(array('rel' => 'image'));
-        $images = $this->registry->getRepository('KunstmaanMediaBundle:Media')->findBy(
+        $folder = $this->registry->getRepository(\Kunstmaan\MediaBundle\Entity\Folder::class)->findOneBy(array('rel' => 'image'));
+        $images = $this->registry->getRepository(\Kunstmaan\MediaBundle\Entity\Media::class)->findBy(
             array('folder' => $folder, 'deleted' => false),
             array(),
             2

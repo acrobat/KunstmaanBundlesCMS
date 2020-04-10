@@ -24,7 +24,7 @@ class Tag extends BaseTag implements Translatable
     protected $id;
 
     /**
-     * @Gedmo\Translatable()
+     * @Gedmo\Translatable
      * @ORM\Column(name="name", type="string", unique=true)
      */
     protected $name;

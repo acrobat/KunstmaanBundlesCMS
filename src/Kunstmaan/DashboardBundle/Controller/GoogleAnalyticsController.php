@@ -55,21 +55,21 @@ class GoogleAnalyticsController extends Controller
 
         // get the segment id
         $segmentId = $request->query->get('id');
-        $params['segments'] = $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig')->findFirst()->getSegments();
+        $params['segments'] = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class)->findFirst()->getSegments();
         $params['segmentId'] = $segmentId;
 
         // set the overviews param
         $params['token'] = true;
         if ($segmentId) {
-            $overviews = $em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment')->find($segmentId)->getOverviews();
+            $overviews = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class)->find($segmentId)->getOverviews();
         } else {
-            $overviews = $em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview')->getDefaultOverviews();
+            $overviews = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class)->getDefaultOverviews();
         }
 
-        $params['disableGoals'] = $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig')->findFirst()->getDisableGoals();
+        $params['disableGoals'] = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class)->findFirst()->getDisableGoals();
         $params['overviews'] = $overviews;
         /** @var AnalyticsConfigRepository $analyticsConfigRepository */
-        $analyticsConfigRepository = $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
+        $analyticsConfigRepository = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
         $date = $analyticsConfigRepository->findFirst()->getLastUpdate();
         if ($date) {
             $params['last_update'] = $date->format('d-m-Y H:i');
@@ -130,7 +130,7 @@ class GoogleAnalyticsController extends Controller
         }
 
         $em = $this->getDoctrine()->getManager();
-        $config = $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig')->findFirst();
+        $config = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class)->findFirst();
 
         $params['accountId'] = $config->getAccountId();
         $params['propertyId'] = 0;
@@ -169,7 +169,7 @@ class GoogleAnalyticsController extends Controller
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
 
         $em = $this->getDoctrine()->getManager();
-        $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig')->resetProfileId();
+        $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class)->resetProfileId();
 
         return $this->redirect($this->generateUrl('KunstmaanDashboardBundle_ProfileSelection'));
     }
@@ -184,7 +184,7 @@ class GoogleAnalyticsController extends Controller
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
 
         $em = $this->getDoctrine()->getManager();
-        $em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig')->resetPropertyId();
+        $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class)->resetPropertyId();
 
         return $this->redirect($this->generateUrl('KunstmaanDashboardBundle_Config'));
     }

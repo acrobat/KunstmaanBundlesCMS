@@ -103,7 +103,7 @@ class GoogleAnalyticsSegmentsListCommand extends ContainerAwareCommand
     private function getSegmentsOfConfig($configId)
     {
         // get specified config
-        $configRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
+        $configRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
         $config = $configRepository->find($configId);
 
         if (!$config) {
@@ -122,7 +122,7 @@ class GoogleAnalyticsSegmentsListCommand extends ContainerAwareCommand
     private function getAllSegments()
     {
         // get all segments
-        $segmentRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment');
+        $segmentRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class);
 
         return $segmentRepository->findAll();
     }

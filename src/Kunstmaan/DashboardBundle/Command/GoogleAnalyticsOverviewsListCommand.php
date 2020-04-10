@@ -118,7 +118,7 @@ class GoogleAnalyticsOverviewsListCommand extends ContainerAwareCommand
     private function getOverviewsOfSegment($segmentId)
     {
         // get specified segment
-        $segmentRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment');
+        $segmentRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class);
         $segment = $segmentRepository->find($segmentId);
 
         if (!$segment) {
@@ -139,7 +139,7 @@ class GoogleAnalyticsOverviewsListCommand extends ContainerAwareCommand
     private function getOverviewsOfConfig($configId)
     {
         // get specified config
-        $configRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
+        $configRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
         $config = $configRepository->find($configId);
 
         if (!$config) {
@@ -158,7 +158,7 @@ class GoogleAnalyticsOverviewsListCommand extends ContainerAwareCommand
     private function getAllOverviews()
     {
         // get all overviews
-        $overviewRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview');
+        $overviewRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class);
 
         return $overviewRepository->findAll();
     }

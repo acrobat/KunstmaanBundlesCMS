@@ -54,9 +54,9 @@ class PagePartCreatorService
         $this->em = $em;
         // Because these repositories are shared between the different functions it's
         // easier to make them available in the class.
-        $this->pagePartRepo = $em->getRepository('KunstmaanPagePartBundle:PagePartRef');
-        $this->translationRepo = $em->getRepository('KunstmaanNodeBundle:NodeTranslation');
-        $this->nodeRepo = $em->getRepository('KunstmaanNodeBundle:Node');
+        $this->pagePartRepo = $em->getRepository(\Kunstmaan\PagePartBundle\Entity\PagePartRef::class);
+        $this->translationRepo = $em->getRepository(NodeTranslation::class);
+        $this->nodeRepo = $em->getRepository(Node::class);
     }
 
     /**
@@ -179,7 +179,7 @@ class PagePartCreatorService
         $page = $translation->getRef($this->em);
 
         /** @var PageTemplateConfigurationRepository $repo */
-        $repo = $this->em->getRepository('KunstmaanPagePartBundle:PageTemplateConfiguration');
+        $repo = $this->em->getRepository(PageTemplateConfiguration::class);
         $pageTemplateConfiguration = $repo->findFor($page);
         if ($pageTemplateConfiguration) {
             $pageTemplateConfiguration->setPageTemplate($templateName);

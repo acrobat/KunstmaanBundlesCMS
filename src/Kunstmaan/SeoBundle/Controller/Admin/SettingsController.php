@@ -17,7 +17,7 @@ class SettingsController extends BaseSettingsController
      * Generates the robots administration form and fills it with a default value if needed.
      *
      * @Route(path="/", name="KunstmaanSeoBundle_settings_robots")
-     * @Template(template="@KunstmaanSeo/Admin/Settings/robotsSettings.html.twig")
+     * @Template("@KunstmaanSeo/Admin/Settings/robotsSettings.html.twig")
      *
      * @param Request $request
      *
@@ -28,7 +28,7 @@ class SettingsController extends BaseSettingsController
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
 
         $em = $this->getDoctrine()->getManager();
-        $repo = $this->getDoctrine()->getRepository('KunstmaanSeoBundle:Robots');
+        $repo = $this->getDoctrine()->getRepository(Robots::class);
         $robot = $repo->findOneBy(array());
         $default = $this->container->getParameter('robots_default');
         $isSaved = true;

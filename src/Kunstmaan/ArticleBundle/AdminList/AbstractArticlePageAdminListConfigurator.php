@@ -91,7 +91,7 @@ abstract class AbstractArticlePageAdminListConfigurator extends AbstractDoctrine
     protected function getQueryBuilder()
     {
         $queryBuilder = $this->em
-            ->getRepository('KunstmaanNodeBundle:NodeTranslation')
+            ->getRepository(\Kunstmaan\NodeBundle\Entity\NodeTranslation::class)
             ->createQueryBuilder('b');
 
         return $queryBuilder;

@@ -81,7 +81,7 @@ class GoogleAnalyticsConfigsListCommand extends ContainerAwareCommand
     private function getconfigs()
     {
         // get all segments
-        $configRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
+        $configRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
 
         return $configRepository->findAll();
     }

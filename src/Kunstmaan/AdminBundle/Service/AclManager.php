@@ -92,7 +92,7 @@ class AclManager
     public function applyAclChangesets()
     {
         /** @var AclChangesetRepository $aclRepo */
-        $aclRepo = $this->em->getRepository('KunstmaanAdminBundle:AclChangeset');
+        $aclRepo = $this->em->getRepository(AclChangeset::class);
         do {
             $changeset = $aclRepo->findNewChangeset();
             if (\is_null($changeset)) {

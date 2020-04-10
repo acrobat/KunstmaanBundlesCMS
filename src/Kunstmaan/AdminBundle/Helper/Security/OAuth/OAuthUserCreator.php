@@ -58,7 +58,7 @@ class OAuthUserCreator implements OAuthUserCreatorInterface
 
             foreach ($this->getAccessLevels($email) as $accessLevel) {
                 /** @var GroupInterface $group */
-                $group = $this->em->getRepository('KunstmaanAdminBundle:Group')->findOneBy(['name' => $accessLevel]);
+                $group = $this->em->getRepository(\Kunstmaan\AdminBundle\Entity\Group::class)->findOneBy(['name' => $accessLevel]);
                 if (null !== $group) {
                     $user->addGroup($group);
                 }

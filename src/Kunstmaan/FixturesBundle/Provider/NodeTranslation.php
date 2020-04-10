@@ -10,7 +10,7 @@ class NodeTranslation
 
     public function __construct(EntityManager $em)
     {
-        $this->nodeTransRepo = $em->getRepository('KunstmaanNodeBundle:NodeTranslation');
+        $this->nodeTransRepo = $em->getRepository(\Kunstmaan\NodeBundle\Entity\NodeTranslation::class);
     }
 
     public function getTranslationByTitle($title, $lang)

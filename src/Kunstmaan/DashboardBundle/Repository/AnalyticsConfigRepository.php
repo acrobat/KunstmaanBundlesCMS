@@ -45,7 +45,7 @@ class AnalyticsConfigRepository extends EntityRepository
     {
         $em = $this->getEntityManager();
 
-        return $em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview')
+        return $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class)
             ->findBy(array(
                     'config' => $config,
                     'segment' => null,
@@ -65,7 +65,7 @@ class AnalyticsConfigRepository extends EntityRepository
         $em->persist($config);
         $em->flush();
 
-        $this->getEntityManager()->getRepository('KunstmaanDashboardBundle:AnalyticsOverview')->addOverviews($config);
+        $this->getEntityManager()->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class)->addOverviews($config);
 
         return $config;
     }
@@ -81,7 +81,7 @@ class AnalyticsConfigRepository extends EntityRepository
 
         // Backward compatibilty to flush overviews without a config set
         if (!$id) {
-            $overviewRepository = $em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview');
+            $overviewRepository = $em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class);
             foreach ($overviewRepository->findAll() as $overview) {
                 $em->remove($overview);
             }

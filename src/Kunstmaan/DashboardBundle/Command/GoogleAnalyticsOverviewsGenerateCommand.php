@@ -110,7 +110,7 @@ class GoogleAnalyticsOverviewsGenerateCommand extends ContainerAwareCommand
     private function generateOverviewsOfSegment($segmentId)
     {
         /** @var AnalyticsSegmentRepository $segmentRepository */
-        $segmentRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment');
+        $segmentRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class);
         $segment = $segmentRepository->find($segmentId);
 
         if (!$segment) {
@@ -132,9 +132,9 @@ class GoogleAnalyticsOverviewsGenerateCommand extends ContainerAwareCommand
      */
     private function generateOverviewsOfConfig($configId)
     {
-        $configRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
-        $segmentRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment');
-        $overviewRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview');
+        $configRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
+        $segmentRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class);
+        $overviewRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class);
         // get specified config
         $config = $configRepository->find($configId);
 
@@ -161,9 +161,9 @@ class GoogleAnalyticsOverviewsGenerateCommand extends ContainerAwareCommand
      */
     private function generateAllOverviews()
     {
-        $configRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsConfig');
-        $overviewRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsOverview');
-        $segmentRepository = $this->em->getRepository('KunstmaanDashboardBundle:AnalyticsSegment');
+        $configRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsConfig::class);
+        $overviewRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsOverview::class);
+        $segmentRepository = $this->em->getRepository(\Kunstmaan\DashboardBundle\Entity\AnalyticsSegment::class);
         $configs = $configRepository->findAll();
 
         foreach ($configs as $config) {

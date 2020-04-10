@@ -186,7 +186,7 @@ class NodeSearcher extends AbstractElasticaSearcher
         $rescoreQueryBool = new BoolQuery();
 
         //Apply page type boosts
-        $pageClasses = $this->em->getRepository('KunstmaanNodeBundle:Node')->findAllDistinctPageClasses();
+        $pageClasses = $this->em->getRepository(\Kunstmaan\NodeBundle\Entity\Node::class)->findAllDistinctPageClasses();
         foreach ($pageClasses as $pageClass) {
             $page = new $pageClass['refEntityName']();
 
@@ -202,7 +202,7 @@ class NodeSearcher extends AbstractElasticaSearcher
         }
 
         //Apply page specific boosts
-        $nodeSearches = $this->em->getRepository('KunstmaanNodeSearchBundle:NodeSearch')->findAll();
+        $nodeSearches = $this->em->getRepository(\Kunstmaan\NodeSearchBundle\Entity\NodeSearch::class)->findAll();
         foreach ($nodeSearches as $nodeSearch) {
             $elasticaQueryNodeId = new QueryString();
             $elasticaQueryNodeId

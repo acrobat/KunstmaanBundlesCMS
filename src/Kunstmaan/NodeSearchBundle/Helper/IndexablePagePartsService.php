@@ -47,7 +47,7 @@ class IndexablePagePartsService
         $indexablePageParts = [];
         foreach ($contexts as $context) {
             $pageParts = $this->em
-                ->getRepository('KunstmaanPagePartBundle:PagePartRef')
+                ->getRepository(\Kunstmaan\PagePartBundle\Entity\PagePartRef::class)
                 ->getPageParts($page, $context);
 
             foreach ($pageParts as $pagePart) {

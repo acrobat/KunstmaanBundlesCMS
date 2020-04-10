@@ -13,7 +13,7 @@ abstract class AbstractRedirectController extends Controller
     public function indexAction($popup)
     {
         /** @var \Kunstmaan\LeadGenerationBundle\Entity\Popup\AbstractPopup $thePopup */
-        $thePopup = $this->getDoctrine()->getRepository('KunstmaanLeadGenerationBundle:Popup\AbstractPopup')->find($popup);
+        $thePopup = $this->getDoctrine()->getRepository(\Kunstmaan\LeadGenerationBundle\Entity\Popup\AbstractPopup::class)->find($popup);
 
         return $this->render($this->getIndexTemplate(), array(
             'popup' => $thePopup,

@@ -52,7 +52,7 @@ class CloneListener
 
             $contexts = $this->pagePartReader->getPagePartContexts($originalEntity);
             foreach ($contexts as $context) {
-                $this->em->getRepository('KunstmaanPagePartBundle:PagePartRef')->copyPageParts($this->em, $originalEntity, $clonedEntity, $context);
+                $this->em->getRepository(\Kunstmaan\PagePartBundle\Entity\PagePartRef::class)->copyPageParts($this->em, $originalEntity, $clonedEntity, $context);
             }
         }
 

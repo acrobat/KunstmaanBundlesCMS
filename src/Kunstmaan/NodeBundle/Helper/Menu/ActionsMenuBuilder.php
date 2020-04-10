@@ -165,7 +165,7 @@ class ActionsMenuBuilder
         $activeNodeTranslation = $activeNodeVersion->getNodeTranslation();
         $node = $activeNodeTranslation->getNode();
         $queuedNodeTranslationAction = $this->em->getRepository(
-            'KunstmaanNodeBundle:QueuedNodeTranslationAction'
+            \Kunstmaan\NodeBundle\Entity\QueuedNodeTranslationAction::class
         )->findOneBy(['nodeTranslation' => $activeNodeTranslation]);
 
         $isFirst = true;

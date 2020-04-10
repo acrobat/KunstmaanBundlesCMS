@@ -17,8 +17,8 @@ abstract class AbstractNewsletterController extends Controller
      */
     public function indexAction($popup)
     {
-        /** @var \Kunstmaan\LeadGenerationBundle\Entity\Popup\AbstractPopup $thePopup */
-        $thePopup = $this->getDoctrine()->getRepository('KunstmaanLeadGenerationBundle:Popup\AbstractPopup')->find($popup);
+        /** @var AbstractPopup $thePopup */
+        $thePopup = $this->getDoctrine()->getRepository(AbstractPopup::class)->find($popup);
         $form = $this->createSubscriptionForm($thePopup);
 
         return $this->render($this->getIndexTemplate(), array(
@@ -28,13 +28,13 @@ abstract class AbstractNewsletterController extends Controller
     }
 
     /**
-     * @Route("/{popup}/subscribe", name="popup_newsletter_subscribe", requirements={"popup": "\d+"}, methods={"POST"})
-     * @Template()
+     * @Route("/{popup}/subscribe", name="popup_newsletter_subscribe", requirements={"popup":"\d+"}, methods={"POST"})
+     * @Template
      */
     public function subscribeAction(Request $request, $popup)
     {
-        /** @var \Kunstmaan\LeadGenerationBundle\Entity\Popup\AbstractPopup $thePopup */
-        $thePopup = $this->getDoctrine()->getRepository('KunstmaanLeadGenerationBundle:Popup\AbstractPopup')->find($popup);
+        /** @var AbstractPopup $thePopup */
+        $thePopup = $this->getDoctrine()->getRepository(AbstractPopup::class)->find($popup);
         $form = $this->createSubscriptionForm($thePopup);
 
         $form->handleRequest($request);

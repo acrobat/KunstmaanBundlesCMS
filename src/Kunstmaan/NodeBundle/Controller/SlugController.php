@@ -129,7 +129,7 @@ class SlugController extends Controller
         if ($preview) {
             $version = $request->get('version');
             if (!empty($version) && is_numeric($version)) {
-                $nodeVersion = $em->getRepository('KunstmaanNodeBundle:NodeVersion')->find($version);
+                $nodeVersion = $em->getRepository(\Kunstmaan\NodeBundle\Entity\NodeVersion::class)->find($version);
                 if (!\is_null($nodeVersion)) {
                     $entity = $nodeVersion->getRef($em);
                 }

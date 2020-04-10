@@ -67,7 +67,7 @@ class TagAdminListController extends AdminListController
     }
 
     /**
-     * @Route("/autocomplete.{_format}", name="kunstmaantaggingbundle_admin_tag_autocomplete", defaults={"_format" = "json"})
+     * @Route("/autocomplete.{_format}", name="kunstmaantaggingbundle_admin_tag_autocomplete", defaults={"_format":"json"})
      * @Template("@KunstmaanTagging/Tags/autocomplete.json.twig")
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
@@ -78,7 +78,7 @@ class TagAdminListController extends AdminListController
     {
         $search = $request->get('term');
         $em = $this->getDoctrine()->getManager();
-        $qb = $em->getRepository('KunstmaanTaggingBundle:Tag')->createQueryBuilder('n')
+        $qb = $em->getRepository(\Kunstmaan\TaggingBundle\Entity\Tag::class)->createQueryBuilder('n')
             ->where('n.name LIKE :search')
             ->orderBy('n.name', 'ASC')
             ->setParameter('search', '%' . $search . '%');

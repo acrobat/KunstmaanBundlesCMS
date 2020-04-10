@@ -178,7 +178,7 @@ class NodeMenu
         $this->nodesByInternalName = array();
 
         /* @var NodeRepository $repo */
-        $repo = $this->em->getRepository('KunstmaanNodeBundle:Node');
+        $repo = $this->em->getRepository(Node::class);
 
         // Get all possible menu items in one query (also fetch offline nodes)
         $nodes = $repo->getChildNodes(
@@ -246,7 +246,7 @@ class NodeMenu
             $this->breadCrumb = array();
 
             /* @var NodeRepository $repo */
-            $repo = $this->em->getRepository('KunstmaanNodeBundle:Node');
+            $repo = $this->em->getRepository(Node::class);
 
             // Generate breadcrumb MenuItems - fetch *all* languages so you can link translations if needed
             $parentNodes = $repo->getAllParents($this->currentNode);
@@ -347,8 +347,8 @@ class NodeMenu
     }
 
     /**
-     * @param \Kunstmaan\NodeBundle\Entity\Node $node
-     * @param bool                              $includeHiddenFromNav
+     * @param Node $node
+     * @param bool $includeHiddenFromNav
      *
      * @return array|\Kunstmaan\NodeBundle\Helper\NodeMenuItem[]
      */
@@ -371,8 +371,8 @@ class NodeMenu
     }
 
     /**
-     * @param \Kunstmaan\NodeBundle\Entity\Node $node
-     * @param bool                              $includeHiddenFromNav
+     * @param Node $node
+     * @param bool $includeHiddenFromNav
      *
      * @return bool|\Kunstmaan\NodeBundle\Helper\NodeMenuItem
      */
@@ -394,8 +394,8 @@ class NodeMenu
     }
 
     /**
-     * @param \Kunstmaan\NodeBundle\Entity\Node $node
-     * @param bool                              $includeHiddenFromNav
+     * @param Node $node
+     * @param bool $includeHiddenFromNav
      *
      * @return bool|\Kunstmaan\NodeBundle\Helper\NodeMenuItem
      */
@@ -446,7 +446,7 @@ class NodeMenu
      */
     public function getNodeBySlug(NodeTranslation $parentNode, $slug)
     {
-        return $this->em->getRepository('KunstmaanNodeBundle:NodeTranslation')
+        return $this->em->getRepository(NodeTranslation::class)
             ->getNodeTranslationForSlug($slug, $parentNode);
     }
 
@@ -494,7 +494,7 @@ class NodeMenu
                     $parentNode = $parent->getNode();
                 } elseif ($parent instanceof HasNodeInterface) {
                     $repo = $this->em->getRepository(
-                        'KunstmaanNodeBundle:Node'
+                        Node::class
                     );
                     $parentNode = $repo->getNodeFor($parent);
                 }

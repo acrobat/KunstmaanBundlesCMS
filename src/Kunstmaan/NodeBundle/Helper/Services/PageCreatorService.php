@@ -106,12 +106,12 @@ class PageCreatorService
         $em = $this->entityManager;
 
         /** @var NodeRepository $nodeRepo */
-        $nodeRepo = $em->getRepository('KunstmaanNodeBundle:Node');
+        $nodeRepo = $em->getRepository(Node::class);
         /** @var UserRepository $userRepo */
         $userRepo = $em->getRepository($this->userEntityClass);
         /* @var SeoRepository $seoRepo */
         try {
-            $seoRepo = $em->getRepository('KunstmaanSeoBundle:Seo');
+            $seoRepo = $em->getRepository(\Kunstmaan\SeoBundle\Entity\Seo::class);
         } catch (ORMException $e) {
             $seoRepo = null;
         }
@@ -136,7 +136,7 @@ class PageCreatorService
         $rootNode = null;
 
         /* @var \Kunstmaan\NodeBundle\Repository\NodeTranslationRepository $nodeTranslationRepo*/
-        $nodeTranslationRepo = $em->getRepository('KunstmaanNodeBundle:NodeTranslation');
+        $nodeTranslationRepo = $em->getRepository(\Kunstmaan\NodeBundle\Entity\NodeTranslation::class);
 
         foreach ($translations as $translation) {
             $language = $translation['language'];

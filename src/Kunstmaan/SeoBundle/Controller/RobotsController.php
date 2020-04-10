@@ -12,8 +12,8 @@ class RobotsController extends Controller
     /**
      * Generates the robots.txt content when available in the database and falls back to normal robots.txt if exists
      *
-     * @Route(path="/robots.txt", name="KunstmaanSeoBundle_robots", defaults={"_format": "txt"})
-     * @Template(template="@KunstmaanSeo/Admin/Robots/index.html.twig")
+     * @Route(path="/robots.txt", name="KunstmaanSeoBundle_robots", defaults={"_format":"txt"})
+     * @Template("@KunstmaanSeo/Admin/Robots/index.html.twig")
      *
      * @param Request $request
      *
@@ -21,7 +21,7 @@ class RobotsController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $entity = $this->getDoctrine()->getRepository('KunstmaanSeoBundle:Robots')->findOneBy(array());
+        $entity = $this->getDoctrine()->getRepository(\Kunstmaan\SeoBundle\Entity\Robots::class)->findOneBy(array());
         $robots = $this->getParameter('robots_default');
 
         if ($entity && $entity->getRobotsTxt()) {
