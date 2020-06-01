@@ -15,7 +15,7 @@ env:
     - SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
 
 before_install:
-  - yes | pecl install imagick
+#  - yes | pecl install imagick
   - sudo sed -i -e 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/' /etc/ImageMagick-6/policy.xml
   - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
   - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
@@ -45,56 +45,56 @@ after_script:
 jobs:
   allow_failures:
     - php: nightly
-  
+
   include:
     # Test lowest dependencies
-    - stage: Test
-      php: 7.1
-      env:
-        - SYMFONY_REQUIRE='^3.4'
-        - COMPOSER_FLAGS="--prefer-lowest"
-        - SYMFONY_DEPRECATIONS_HELPER="max[direct]=1" # Workaround for BC layer triggering a deprecation in Group entity
-
-    # Test latest php with LTS versions.
-    - stage: Test
-      php: 7.3
-      env: SYMFONY_REQUIRE='^3.4'
-    - stage: Test
-      php: 7.3
-      env: SYMFONY_REQUIRE='^4.4'
-
-    # Test the latest stable release
-    - stage: Test
-      php: 7.1
-    - stage: Test
-      php: 7.2
-    - stage: Test
-      php: 7.3
-    - stage: Test
-      php: 7.4
-      env:
-        - COVERAGE=true
-        - PHPUNIT_FLAGS="-v --coverage-clover=coverage.clover"
+#    - stage: Test
+#      php: 7.1
+#      env:
+#        - SYMFONY_REQUIRE='^3.4'
+#        - COMPOSER_FLAGS="--prefer-lowest"
+#        - SYMFONY_DEPRECATIONS_HELPER="max[direct]=1" # Workaround for BC layer triggering a deprecation in Group entity
+#
+#    # Test latest php with LTS versions.
+#    - stage: Test
+#      php: 7.3
+#      env: SYMFONY_REQUIRE='^3.4'
+#    - stage: Test
+#      php: 7.3
+#      env: SYMFONY_REQUIRE='^4.4'
+#
+#    # Test the latest stable release
+#    - stage: Test
+#      php: 7.1
+#    - stage: Test
+#      php: 7.2
+#    - stage: Test
+#      php: 7.3
+#    - stage: Test
+#      php: 7.4
+#      env:
+#        - COVERAGE=true
+#        - PHPUNIT_FLAGS="-v --coverage-clover=coverage.clover"
     - stage: Test
       php: nightly
 
 
     # Validate frontend setup
-    - stage: Test
-      language: javascript
-      cache:
-        npm: false
-      before_install:
-        # Remove any twig syntax from the groundcontrol package.json
-        - sed -i -e 's/{% if demosite %}//g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
-        - sed -i -e 's/{% endif %}//g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
-        - sed -i -e 's/"name".*/"name":"demo",/g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
-      install:
-        - npm install
-      before_script: skip
-      script:
-        - npm run build -- --continueAfterTestError=true
-        - npm run buildGroundControlSkeleton
-      after_script: skip
+#    - stage: Test
+#      language: javascript
+#      cache:
+#        npm: false
+#      before_install:
+#        # Remove any twig syntax from the groundcontrol package.json
+#        - sed -i -e 's/{% if demosite %}//g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
+#        - sed -i -e 's/{% endif %}//g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
+#        - sed -i -e 's/"name".*/"name":"demo",/g' src/Kunstmaan/GeneratorBundle/Resources/SensioGeneratorBundle/skeleton/layout/groundcontrol/package.json
+#      install:
+#        - npm install
+#      before_script: skip
+#      script:
+#        - npm run build -- --continueAfterTestError=true
+#        - npm run buildGroundControlSkeleton
+#      after_script: skip
 
 
