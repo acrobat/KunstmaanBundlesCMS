@@ -21,6 +21,7 @@ before_install:
   - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - travis_retry composer self-update
   - composer global require symfony/flex
+  - if [[ "$TRAVIS_PHP_VERSION" = "nightly" ]]; then composer config platform.php 7.4.99; fi;
 
 install:
   - composer update $COMPOSER_FLAGS --prefer-dist --no-progress --no-suggest --ansi
@@ -42,6 +43,9 @@ after_script:
     fi
 
 jobs:
+  allow_failures:
+    - php: nightly
+  
   include:
     # Test lowest dependencies
     - stage: Test
@@ -71,6 +75,9 @@ jobs:
       env:
         - COVERAGE=true
         - PHPUNIT_FLAGS="-v --coverage-clover=coverage.clover"
+    - stage: Test
+      php: nightly
+
 
     # Validate frontend setup
     - stage: Test
