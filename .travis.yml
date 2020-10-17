@@ -21,16 +21,13 @@ before_install:
   - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - travis_retry composer self-update
   - composer global require symfony/flex
+  - |
+    if [[ $COVERAGE = true ]]; then
+      pecl install pcov-1.0.6
+    fi
 
 install:
   - composer update $COMPOSER_FLAGS --prefer-dist --no-progress --no-suggest --ansi
-
-before_script:
-  - |
-    if [[ $COVERAGE = true ]]; then
-      mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
-      if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
-    fi
 
 script: ./vendor/bin/phpunit $PHPUNIT_FLAGS
 
