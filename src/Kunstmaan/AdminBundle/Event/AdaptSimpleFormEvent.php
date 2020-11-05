@@ -33,14 +33,13 @@ class AdaptSimpleFormEvent extends BcEvent
     /**
      * @var array
      */
-    protected $options = array();
+    protected $options = [];
 
     /**
-     * @param Request $request
-     * @param string  $formType
+     * @param string $formType
      * @param $data
      */
-    public function __construct(Request $request, $formType, $data, $options = array())
+    public function __construct(Request $request, $formType, $data, $options = [])
     {
         $this->request = $request;
         $this->formType = $formType;
@@ -56,9 +55,6 @@ class AdaptSimpleFormEvent extends BcEvent
         return $this->tabPane;
     }
 
-    /**
-     * @param TabPane $tabPane
-     */
     public function setTabPane(TabPane $tabPane)
     {
         $this->tabPane = $tabPane;
@@ -72,9 +68,6 @@ class AdaptSimpleFormEvent extends BcEvent
         return $this->request;
     }
 
-    /**
-     * @param Request $request
-     */
     public function setRequest(Request $request)
     {
         $this->request = $request;

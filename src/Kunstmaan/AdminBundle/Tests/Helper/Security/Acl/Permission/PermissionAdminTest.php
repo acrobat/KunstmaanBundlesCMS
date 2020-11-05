@@ -42,7 +42,7 @@ class PermissionAdminTest extends TestCase
     public function testInitialize()
     {
         $object = $this->getInitializedPermissionAdmin();
-        $this->assertEquals(array('ROLE_TEST' => new MaskBuilder(1)), $object->getPermissions());
+        $this->assertEquals(['ROLE_TEST' => new MaskBuilder(1)], $object->getPermissions());
     }
 
     public function testGetPermissionWithString()
@@ -108,7 +108,7 @@ class PermissionAdminTest extends TestCase
         $kernel = $this->getKernel();
         $object = new PermissionAdmin($em, $context, $aclProvider, $retrievalStrategy, $dispatcher, $shell, $kernel);
 
-        $permissions = array('PERMISSION1', 'PERMISSION2');
+        $permissions = ['PERMISSION1', 'PERMISSION2'];
         $permissionMap = $this->createMock('Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\PermissionMapInterface');
         $permissionMap
             ->expects($this->any())
@@ -142,7 +142,7 @@ class PermissionAdminTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $object->createAclChangeSet($entity, array(), $user);
+        $object->createAclChangeSet($entity, [], $user);
     }
 
     /**
@@ -251,7 +251,7 @@ class PermissionAdminTest extends TestCase
             ->getMock();
         $acl->expects($this->atLeastOnce())
             ->method('getObjectAces')
-            ->will($this->returnValue(array($entity)));
+            ->will($this->returnValue([$entity]));
 
         $aclProvider = $this->getAclProvider();
         $aclProvider
