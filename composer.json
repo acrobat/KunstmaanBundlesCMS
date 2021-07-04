@@ -83,7 +83,7 @@
     },
     "require-dev": {
         "symfony/debug": "^3.4.21|^4.4",
-        "fzaninotto/faker": "~1.6",
+        "fakerphp/faker": "^1.14.1",
         "ekino/newrelic-bundle": "^1.4",
         "nelmio/alice": "^3.5",
         "matthiasnoback/symfony-config-test": "^4.0",
