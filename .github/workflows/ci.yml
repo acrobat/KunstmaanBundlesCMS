@@ -63,6 +63,8 @@ jobs:
                     coverage: none
                     tools: pecl
                     extensions: imagick
+                env:
+                    COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
             -   name: Require symfony/flex
                 run: composer global require symfony/flex --no-progress --no-scripts --no-plugins

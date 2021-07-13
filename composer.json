@@ -58,7 +58,7 @@
         "sensio/framework-extra-bundle": "^5.0",
         "incenteev/composer-parameter-handler": "^2.0",
 
-        "friendsofsymfony/user-bundle": "^2.0",
+        "friendsofsymfony/user-bundle": "dev-php8-support",
         "knplabs/knp-menu-bundle": "^3.0",
         "guzzlehttp/guzzle": "~6.1",
         "babdev/pagerfanta-bundle": "^2.5",
@@ -93,6 +93,7 @@
         "phpstan/phpstan": "^0.12.18",
         "phpstan/phpstan-doctrine": "^0.12.10"
     },
+    "repositories": [{"type": "vcs", "url": "git@github.com:acrobat/FOSUserBundle.git"}],
     "replace": {
         "kunstmaan/admin-bundle": "self.version",
         "kunstmaan/adminlist-bundle": "self.version",
