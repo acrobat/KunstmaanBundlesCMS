@@ -67,10 +67,6 @@ final class MakeWebsiteSkeleton extends AbstractMaker
      */
     public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator)
     {
-        if (false === SymfonyVersionChecker::isSymfony4()) {
-            throw new \InvalidArgumentException('This command can only be executed on symfony 4.');
-        }
-
         $this->copyGroundcontrol($input, $io, $generator);
         $this->copyAssets($input, $io, $generator);
 

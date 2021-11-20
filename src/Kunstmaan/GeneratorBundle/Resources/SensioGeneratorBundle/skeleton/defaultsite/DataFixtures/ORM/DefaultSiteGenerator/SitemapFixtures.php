@@ -3,7 +3,7 @@
 namespace {{ namespace }}\DataFixtures\ORM\DefaultSiteGenerator;
 
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
-use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Kunstmaan\SitemapBundle\Entity\SitemapPage;
@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * SitemapFixtures
  */
-class SitemapFixtures extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
+class SitemapFixtures extends Fixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
 {
     /**
      * @var ContainerInterface

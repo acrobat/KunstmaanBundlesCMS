@@ -3,7 +3,7 @@
 namespace {{ namespace }}\DataFixtures\ORM\DefaultSiteGenerator;
 
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
-use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Kunstmaan\AdminBundle\Entity\DashboardConfiguration;
@@ -31,7 +31,7 @@ use {{ namespace }}\Entity\Pages\SearchPage;
 /**
  * DefaultSiteFixtures
  */
-class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
+class DefaultSiteFixtures extends Fixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
 {
     /**
      * Username that is used for creating pages

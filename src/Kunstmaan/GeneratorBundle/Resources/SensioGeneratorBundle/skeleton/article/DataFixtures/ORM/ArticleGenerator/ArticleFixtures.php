@@ -3,7 +3,7 @@
 namespace {{ namespace }}\DataFixtures\ORM\ArticleGenerator;
 
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
-use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -20,7 +20,7 @@ use {{ namespace }}\Entity\{{ entity_class }}Author;
 /**
  * {{ entity_class }}ArticleFixtures
  */
-class {{ entity_class }}ArticleFixtures extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
+class {{ entity_class }}ArticleFixtures extends Fixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
 {
     /**
      * @var ContainerInterface

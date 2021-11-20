@@ -3,9 +3,9 @@
 namespace {{ namespace }}\DataFixtures\ORM\DefaultSiteGenerator;
 
 use {{ namespace }}\Entity\Pages\HomePage;
-use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Kunstmaan\AdminBundle\Entity\DashboardConfiguration;
 use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Kunstmaan\NodeBundle\Helper\Services\PageCreatorService;
@@ -13,7 +13,7 @@ use Kunstmaan\TranslatorBundle\Entity\Translation;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
+class DefaultSiteFixtures extends Fixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
     /**
      * Username that is used for creating pages.

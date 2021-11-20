@@ -1,4 +1,4 @@
-{% macro getImageUrl(media, filter) %}{% spaceless %}
+{% macro getImageUrl(media, filter) %}{% apply spaceless %}
     {% if media %}
         {% set type = media.url|lower|split('.')|last %}
 
@@ -18,9 +18,9 @@
 
         {{ imgUrl | replace({' ': '%20'}) }}
     {% endif %}
-{% endspaceless %}{% endmacro %}
+{% endapply %}{% endmacro %}
 
-{% macro getImageUrlString(media, filter) %}{% spaceless %}
+{% macro getImageUrlString(media, filter) %}{% apply spaceless %}
     {% if media %}
         {% set type = media|lower|split('.')|last %}
 
@@ -34,7 +34,7 @@
 
         {{ imgUrl | replace({' ': '%20'}) }}
     {% endif %}
-{% endspaceless %}{% endmacro %}
+{% endapply %}{% endmacro %}
 
 {% macro getImageDimensions(url) %}
     {% set dimensions = get_image_dimensions(url) %}

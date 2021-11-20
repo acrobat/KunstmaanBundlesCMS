@@ -3,7 +3,7 @@
 namespace {{ namespace }}\DataFixtures\ORM\SearchPageGenerator;
 
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
-use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
@@ -17,7 +17,7 @@ use {{ namespace }}\Entity\Pages\SearchPage;
 /**
  * SearchFixtures
  */
-class SearchFixtures extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
+class SearchFixtures extends Fixture implements OrderedFixtureInterface, ContainerAwareInterface, ORMFixtureInterface
 {
     /**
      * @var ContainerInterface

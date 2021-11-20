@@ -4,7 +4,6 @@ namespace Kunstmaan\GeneratorBundle\Command;
 
 use Kunstmaan\GeneratorBundle\Helper\CommandAssistant;
 use Sensio\Bundle\GeneratorBundle\Command\GeneratorCommand;
-use Sensio\Bundle\GeneratorBundle\Command\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -78,18 +77,9 @@ final class InstallCommand extends GeneratorCommand
     {
         $this->initAssistant($input, $output);
 
-        $questionHelper = new QuestionHelper();
-
         $outputStyle = new SymfonyStyle($input, $output);
         $outputStyle->writeln('<info>Installing KunstmaanCms...</info>');
         $outputStyle->writeln($this->getKunstmaanLogo());
-
-        if (Kernel::VERSION_ID < 40000 && $input->getOption('new-cms-skeleton')) {
-            $output->writeln('<error>The new cms skeleton and default pageparts are not supported on Symfony 3</error>');
-            $this->shouldStop = true;
-
-            return;
-        }
 
         if (true !== $input->getOption('db-installed')) {
             $this->shouldStop = !$this->assistant->askConfirmation('We need access to your database. Are the database credentials setup properly? (y/n)', 'y');
@@ -139,8 +129,9 @@ final class InstallCommand extends GeneratorCommand
         $this->executeCommand($output, 'kuma:generate:config');
 
         if ($input->getOption('new-cms-skeleton')) {
-            $this->executeCommand($output, 'make:website-skeleton', $defaultSiteOptions);
-            $this->executeCommand($output, 'make:default-pageparts', $defaultSiteOptions);
+            unset($defaultSiteOptions['--browsersync']);
+            $this->executeCommand($output, 'make:website-skeleton', array_merge($defaultSiteOptions, ['-vvv']));
+            $this->executeCommand($output, 'make:default-pageparts', array_merge($defaultSiteOptions, ['-vvv']));
         } else {
             $this->executeCommand($output, 'kuma:generate:default-site', $defaultSiteOptions);
         }
@@ -171,6 +162,7 @@ final class InstallCommand extends GeneratorCommand
 
         try {
             if ($separateProcess) {
+                unset($options['command']);
                 $process = new Process(array_merge(['bin/console', $command], array_keys($options)));
                 $process->setTty(true);
                 $process->run();
