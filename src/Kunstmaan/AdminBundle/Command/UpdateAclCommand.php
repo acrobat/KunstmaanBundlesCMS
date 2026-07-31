@@ -3,6 +3,7 @@
 namespace Kunstmaan\AdminBundle\Command;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Kunstmaan\AdminBundle\Helper\Security\Acl\Permission\PermissionMapInterface;
 use Kunstmaan\AdminBundle\Service\AclManager;
 use Kunstmaan\NodeBundle\Entity\Node;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -11,7 +12,6 @@ use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use Symfony\Component\Security\Acl\Permission\PermissionMapInterface;
 
 /**
  * Permissions update of ACL entries for all nodes for given role.
