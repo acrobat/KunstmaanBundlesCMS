@@ -8,6 +8,7 @@ use Kunstmaan\AdminBundle\Service\UserManager;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -142,6 +143,7 @@ EOT
 
     protected function interact(InputInterface $input, OutputInterface $output): void
     {
+        $questionHelper = new QuestionHelper();
         if (!$input->getArgument('username')) {
             $question = new Question('Please choose a username:');
             $question->setValidator(function ($username) {
@@ -151,7 +153,7 @@ EOT
 
                 return $username;
             });
-            $username = $this->getHelper('question')->ask(
+            $username = $questionHelper->ask(
                 $input,
                 $output,
                 $question
@@ -168,7 +170,7 @@ EOT
 
                 return $email;
             });
-            $email = $this->getHelper('question')->ask(
+            $email = $questionHelper->ask(
                 $input,
                 $output,
                 $question
@@ -187,7 +189,7 @@ EOT
 
                 return $password;
             });
-            $password = $this->getHelper('question')->ask(
+            $password = $questionHelper->ask(
                 $input,
                 $output,
                 $question
@@ -197,7 +199,7 @@ EOT
         }
 
         if (!$input->getArgument('locale')) {
-            $locale = $this->getHelper('question')->ask(
+            $locale = $questionHelper->ask(
                 $input,
                 $output,
                 new Question('Please enter the locale (or leave empty for default admin locale):')
@@ -231,7 +233,7 @@ EOT
             });
 
             // Group has to be imploded because $input->setOption expects a string
-            $groups = $this->getHelper('question')->ask($input, $output, $question);
+            $groups = $questionHelper->ask($input, $output, $question);
 
             $input->setOption('group', $groups);
         }
