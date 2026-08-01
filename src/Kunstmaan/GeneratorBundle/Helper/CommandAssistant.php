@@ -78,7 +78,7 @@ class CommandAssistant
         $this->getQuestionHelper()->writeSection($this->output, $text, $style);
     }
 
-    private function getQuestionHelper(): Questionhelper
+    private function getQuestionHelper(): QuestionHelper
     {
         return $this->questionHelper;
     }

@@ -5,6 +5,7 @@ namespace Kunstmaan\SearchBundle\Command;
 use Kunstmaan\SearchBundle\Configuration\SearchConfigurationChain;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
@@ -31,7 +32,7 @@ final class SetupIndexCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $helper = $this->getHelper('question');
+        $helper = new QuestionHelper();
 
         foreach ($this->configurationChain->getConfigurations() as $alias => $searchConfiguration) {
             $languagesNotAnalyzed = $searchConfiguration->getLanguagesNotAnalyzed();

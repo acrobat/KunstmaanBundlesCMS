@@ -8,6 +8,7 @@ use Kunstmaan\MediaBundle\Entity\Media;
 use Kunstmaan\MediaBundle\Helper\MediaManager;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -53,7 +54,7 @@ final class CleanDeletedMediaCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($input->getOption('force') !== true) {
-            $helper = $this->getHelper('question');
+            $helper = new QuestionHelper();
             $question = new ConfirmationQuestion('<question>Are you sure you want to remove all deleted Media from the file system?</question> ', false);
 
             if (!$helper->ask($input, $output, $question)) {

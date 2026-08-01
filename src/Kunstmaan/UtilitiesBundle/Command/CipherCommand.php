@@ -5,6 +5,7 @@ namespace Kunstmaan\UtilitiesBundle\Command;
 use Kunstmaan\UtilitiesBundle\Helper\Cipher\CipherInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
@@ -35,7 +36,7 @@ final class CipherCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $helper = $this->getHelper('question');
+        $helper = new QuestionHelper();
 
         $question = new ChoiceQuestion(
             'Please select the method you want to use',
