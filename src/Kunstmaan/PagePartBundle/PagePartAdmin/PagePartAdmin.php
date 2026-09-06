@@ -61,6 +61,11 @@ class PagePartAdmin
     protected $newPageParts = [];
 
     /**
+     * @var array|null
+     */
+    private $possiblePagePartTypes;
+
+    /**
      * @param PagePartAdminConfiguratorInterface $configurator The configurator
      * @param EntityManagerInterface             $em           The entity manager
      * @param HasPagePartsInterface              $page         The page
@@ -116,17 +121,21 @@ class PagePartAdmin
             $pageParts = array_merge($pageParts, $result);
         }
 
+        // Index the pageparts so every pagepartref can be linked without
+        // looping over all the fetched pageparts again
+        $pagePartsByReference = [];
+        foreach ($pageParts as $pagePart) {
+            $pagePartsByReference[ClassLookup::getClass($pagePart) . '#' . $pagePart->getId()] = $pagePart;
+        }
+
         // Link the pagepartref to the pagepart
         foreach ($this->pagePartRefs as $pagePartRef) {
-            foreach ($pageParts as $key => $pagePart) {
-                if (ClassLookup::getClass($pagePart) == $pagePartRef->getPagePartEntityname()
-                    && $pagePart->getId() == $pagePartRef->getPagePartId()
-                ) {
-                    $this->pageParts[$pagePartRef->getId()] = $pagePart;
-                    unset($pageParts[$key]);
+            $reference = $pagePartRef->getPagePartEntityname() . '#' . $pagePartRef->getPagePartId();
 
-                    break;
-                }
+            if (isset($pagePartsByReference[$reference])) {
+                $this->pageParts[$pagePartRef->getId()] = $pagePartsByReference[$reference];
+                // A pagepart can only be linked to a single pagepartref
+                unset($pagePartsByReference[$reference]);
             }
         }
     }
@@ -255,15 +264,32 @@ class PagePartAdmin
         // Add new pageparts on the correct position + Re-order and save pageparts if needed
         $sequences = $request->request->all($this->context . '_sequence');
         $sequencescount = \count($sequences);
+
+        // Persist all new pageparts before creating their references, so they
+        // all get their id from a single flush. Flushing for every pagepart
+        // separately gets very slow on pages with a lot of pageparts.
+        $hasNewPageParts = false;
+        for ($i = 0; $i < $sequencescount; ++$i) {
+            if (\array_key_exists($sequences[$i], $this->newPageParts)) {
+                $this->em->persist($this->newPageParts[$sequences[$i]]);
+                $hasNewPageParts = true;
+            }
+        }
+
+        if ($hasNewPageParts) {
+            $this->em->flush();
+
+            // The amount of pageparts of a type changed
+            $this->possiblePagePartTypes = null;
+        }
+
         for ($i = 0; $i < $sequencescount; ++$i) {
             $pagePartRefId = $sequences[$i];
 
             if (\array_key_exists($pagePartRefId, $this->newPageParts)) {
                 $pagePart = $this->newPageParts[$pagePartRefId];
-                $this->em->persist($pagePart);
-                $this->em->flush();
 
-                $ppRefRepo->addPagePart($this->page, $pagePart, $i + 1, $this->context, false);
+                $ppRefRepo->addPagePart($this->page, $pagePart, $i + 1, $this->context, false, false);
             } elseif (\array_key_exists($pagePartRefId, $this->pagePartRefs)) {
                 $pagePartRef = $this->pagePartRefs[$pagePartRefId];
                 if ($pagePartRef instanceof PagePartRef && $pagePartRef->getSequencenumber() != ($i + 1)) {
@@ -277,6 +303,10 @@ class PagePartAdmin
             if (isset($pagePart)) {
                 $this->container->get('event_dispatcher')->dispatch(new PagePartEvent($pagePart, $this->page), Events::POST_PERSIST);
             }
+        }
+
+        if ($hasNewPageParts) {
+            $this->em->flush();
         }
     }
 
@@ -296,6 +326,12 @@ class PagePartAdmin
      */
     public function getPossiblePagePartTypes()
     {
+        // This is called for every rendered pagepart, so the (possibly counting)
+        // result is cached for the lifetime of this admin
+        if (null !== $this->possiblePagePartTypes) {
+            return $this->possiblePagePartTypes;
+        }
+
         $possiblePPTypes = $this->configurator->getPossiblePagePartTypes();
         $result = [];
 
@@ -321,7 +357,7 @@ class PagePartAdmin
             }
         }
 
-        return $result;
+        return $this->possiblePagePartTypes = $result;
     }
 
     /**

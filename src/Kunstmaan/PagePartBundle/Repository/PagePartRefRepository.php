@@ -22,10 +22,11 @@ class PagePartRefRepository extends EntityRepository
      * @param int                   $sequencenumber     The sequence numer
      * @param string                $context            The context
      * @param bool                  $pushOtherPageParts Push other pageparts (sequence + 1)
+     * @param bool                  $flush              Flush the entity manager, pass false when adding multiple pageparts at once
      *
      * @return PagePartRef
      */
-    public function addPagePart(HasPagePartsInterface $page, PagePartInterface $pagepart, $sequencenumber, $context = 'main', $pushOtherPageParts = true)
+    public function addPagePart(HasPagePartsInterface $page, PagePartInterface $pagepart, $sequencenumber, $context = 'main', $pushOtherPageParts = true, $flush = true)
     {
         if ($pushOtherPageParts) {
             $pagepartrefs = $this->getPagePartRefs($page, $context);
@@ -47,7 +48,10 @@ class PagePartRefRepository extends EntityRepository
         $pagepartref->setPagePartId($pagepart->getId());
         $pagepartref->setSequencenumber($sequencenumber);
         $this->getEntityManager()->persist($pagepartref);
-        $this->getEntityManager()->flush();
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
 
         return $pagepartref;
     }
@@ -121,7 +125,7 @@ class PagePartRefRepository extends EntityRepository
     public function copyPageParts(EntityManager $em, HasPagePartsInterface $fromPage, HasPagePartsInterface $toPage, $context = 'main')
     {
         $fromPageParts = $this->getPageParts($fromPage, $context);
-        $sequenceNumber = 1;
+        $toPageParts = [];
         foreach ($fromPageParts as $fromPagePart) {
             $toPagePart = clone $fromPagePart;
             $toPagePart->setId(null);
@@ -129,10 +133,26 @@ class PagePartRefRepository extends EntityRepository
                 $toPagePart->deepClone();
             }
             $em->persist($toPagePart);
-            $em->flush();
-            $this->addPagePart($toPage, $toPagePart, $sequenceNumber, $context, false);
+            $toPageParts[] = $toPagePart;
+        }
+
+        if ([] === $toPageParts) {
+            return;
+        }
+
+        // Flush once so all copies have an id before their references are created.
+        // Flushing for every pagepart separately gets very slow on pages with a
+        // lot of pageparts, as every flush recalculates the changeset of all
+        // previously copied pageparts.
+        $em->flush();
+
+        $sequenceNumber = 1;
+        foreach ($toPageParts as $toPagePart) {
+            $this->addPagePart($toPage, $toPagePart, $sequenceNumber, $context, false, false);
             ++$sequenceNumber;
         }
+
+        $em->flush();
     }
 
     /**

@@ -70,10 +70,13 @@ final class PagePartAdminController extends AbstractController
             throw new \RuntimeException(sprintf('Given pagepart expected to implement PagePartInterface, %s given', $pagePartClass));
         }
 
-        $formBuilder = $this->formFactory->createBuilder(FormType::class);
-        $pagePartAdmin->adaptForm($formBuilder);
+        $formBuilder = $this->formFactory->createBuilder(FormType::class, []);
         $id = 'newpp_' . time();
 
+        // Only the form of the new pagepart is rendered here, so the forms of
+        // the pageparts already on the page (PagePartAdmin::adaptForm) are not
+        // built. Building those is very memory intensive on pages with a lot of
+        // pageparts.
         $data = $formBuilder->getData();
         $data['pagepartadmin_' . $id] = $pagePart;
 
